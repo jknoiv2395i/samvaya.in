@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, lazy, Suspense } from "react"
 import { Navbar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
-import { NaturalSpeech } from "./components/NaturalSpeech"
-import { Pricing } from "./components/Pricing"
-import { CtaBanner } from "./components/CtaBanner"
-import { Footer } from "./components/Footer"
-import { EarlyAccessModal } from "./components/EarlyAccessModal"
+
+const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
+const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
+const CtaBanner = lazy(() => import("./components/CtaBanner").then(m => ({ default: m.CtaBanner })))
+const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })))
+const EarlyAccessModal = lazy(() => import("./components/EarlyAccessModal").then(m => ({ default: m.EarlyAccessModal })))
 
 export const App: React.FC = () => {
   const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false)
@@ -34,18 +35,22 @@ export const App: React.FC = () => {
         <main>
           <Hero onOpenEarlyAccess={handleOpenEarlyAccess} />
           <Features />
-          <NaturalSpeech />
-          <Pricing />
-          <CtaBanner onOpenEarlyAccess={handleOpenEarlyAccess} />
-          <Footer />
+          <Suspense fallback={null}>
+            <NaturalSpeech />
+            <Pricing />
+            <CtaBanner onOpenEarlyAccess={handleOpenEarlyAccess} />
+            <Footer />
+          </Suspense>
         </main>
       </div>
 
       {/* Early Access Popup Modal */}
-      <EarlyAccessModal 
-        isOpen={isEarlyAccessOpen} 
-        onClose={handleCloseEarlyAccess} 
-      />
+      <Suspense fallback={null}>
+        <EarlyAccessModal 
+          isOpen={isEarlyAccessOpen} 
+          onClose={handleCloseEarlyAccess} 
+        />
+      </Suspense>
     </div>
   )
 }

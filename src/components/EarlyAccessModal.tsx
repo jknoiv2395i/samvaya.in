@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
-import { Mail, X, CheckCircle2, Loader2, KeyRound } from "lucide-react"
+import { Mail, X, Loader2, KeyRound } from "lucide-react"
 import { supabase, isSupabaseConfigured } from "../lib/supabase"
 
 interface EarlyAccessModalProps {
@@ -259,14 +259,16 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
 
         {/* Right Form Section */}
         <div className="sm:col-span-7 p-6 sm:p-10 md:p-12 min-h-[300px] sm:min-h-[420px] flex flex-col items-center justify-center text-center bg-white relative">
-          {/* Logo Lotus */}
-          <div className="mb-4 sm:mb-6">
-            <img
-              src="/modal-logo.png"
-              alt="Samvaya Logo"
-              className="w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
-            />
-          </div>
+          {/* Logo Lotus (shown on email and otp steps) */}
+          {step !== "done" && (
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="/modal-logo.png"
+                alt="Samvaya Logo"
+                className="w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
+              />
+            </div>
+          )}
 
           {/* Step 1: Email Input */}
           {step === "email" && (
@@ -404,16 +406,14 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
             </form>
           )}
 
-          {/* Step 3: Success Screen */}
+          {/* Step 3: Success Screen with User Artwork */}
           {step === "done" && (
-            <div className="flex flex-col items-center justify-center py-6 animate-in fade-in zoom-in-95 duration-200">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mb-3">
-                <CheckCircle2 className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="font-['Inter'] font-semibold text-neutral-900 text-xl">Verified & On The List!</h3>
-              <p className="font-['Inter'] text-sm text-neutral-500 mt-1 max-w-[280px]">
-                Your email <strong className="text-neutral-800 font-medium">{email}</strong> has been verified. We&apos;ll be in touch soon!
-              </p>
+            <div className="flex flex-col items-center justify-center w-full py-4 animate-in fade-in zoom-in-95 duration-200">
+              <img
+                src="/success-artwork.jpg"
+                alt="Verified & On The List"
+                className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain rounded-2xl drop-shadow-sm select-none pointer-events-none"
+              />
             </div>
           )}
         </div>
