@@ -3,7 +3,7 @@ import { Mail } from "lucide-react"
 import { Stats } from "./Stats"
 
 interface HeroProps {
-  onOpenEarlyAccess?: () => void
+  onOpenEarlyAccess?: (email?: string) => void
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
@@ -11,11 +11,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (onOpenEarlyAccess) {
+    if (email && onOpenEarlyAccess) {
+      onOpenEarlyAccess(email)
+    } else if (onOpenEarlyAccess) {
       onOpenEarlyAccess()
-    } else if (email) {
-      alert(`Thank you for signing up with ${email}! We will be in touch soon.`)
-      setEmail("")
     }
   }
 

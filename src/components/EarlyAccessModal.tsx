@@ -5,12 +5,19 @@ import { supabase, isSupabaseConfigured } from "../lib/supabase"
 interface EarlyAccessModalProps {
   isOpen: boolean
   onClose: () => void
+  initialEmail?: string
+  autoSendOtp?: boolean
 }
 
 type Step = "email" | "otp" | "done"
 
-export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onClose }) => {
-  const [email, setEmail] = useState("")
+export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ 
+  isOpen, 
+  onClose,
+  initialEmail = "",
+  autoSendOtp = false,
+}) => {
+  const [email, setEmail] = useState(initialEmail)
   const [step, setStep] = useState<Step>("email")
   const [otp, setOtp] = useState(["", "", "", "", "", ""])
   const [resendTimer, setResendTimer] = useState(30)
@@ -18,6 +25,25 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
   const [errorMessage, setErrorMessage] = useState("")
 
   const otpInputsRef = useRef<(HTMLInputElement | null)[]>([])
+
+  // Initialize or trigger auto OTP send when opened with email
+  useEffect(() => {
+    if (isOpen) {
+      if (initialEmail) {
+        setEmail(initialEmail)
+        if (autoSendOtp) {
+          sendEmailOtp(initialEmail)
+        } else {
+          setStep("email")
+        }
+      } else {
+        setStep("email")
+      }
+    } else {
+      setErrorMessage("")
+      setOtp(["", "", "", "", "", ""])
+    }
+  }, [isOpen, initialEmail, autoSendOtp])
 
   // Resend countdown timer
   useEffect(() => {
@@ -32,8 +58,9 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
 
   if (!isOpen) return null
 
-  const sendEmailOtp = async () => {
-    if (!email) return
+  const sendEmailOtp = async (targetEmail?: string) => {
+    const emailToUse = (targetEmail || email).trim().toLowerCase()
+    if (!emailToUse) return
     setLoading(true)
     setErrorMessage("")
 
@@ -44,7 +71,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
     }
 
     try {
-      const cleanEmail = email.trim().toLowerCase()
+      const cleanEmail = emailToUse
 
       // 1. Check if email is already registered and verified on the waitlist
       try {
@@ -396,7 +423,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({ isOpen, onCl
                 ) : (
                   <button
                     type="button"
-                    onClick={sendEmailOtp}
+                    onClick={() => sendEmailOtp()}
                     className="font-['Inter'] text-xs text-neutral-600 hover:text-neutral-900 underline font-medium cursor-pointer"
                   >
                     Resend OTP

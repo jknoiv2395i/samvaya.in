@@ -11,34 +11,47 @@ const EarlyAccessModal = lazy(() => import("./components/EarlyAccessModal").then
 
 export const App: React.FC = () => {
   const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false)
+  const [modalInitialEmail, setModalInitialEmail] = useState("")
+  const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
 
   // Auto-open waitlist popup after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsEarlyAccessOpen(true)
+      setModalInitialEmail("")
+      setModalAutoSendOtp(false)
     }, 5000)
     return () => clearTimeout(timer)
   }, [])
 
-  const handleOpenEarlyAccess = () => {
+  const handleOpenEarlyAccess = (email?: string) => {
+    if (email) {
+      setModalInitialEmail(email)
+      setModalAutoSendOtp(true)
+    } else {
+      setModalInitialEmail("")
+      setModalAutoSendOtp(false)
+    }
     setIsEarlyAccessOpen(true)
   }
 
   const handleCloseEarlyAccess = () => {
     setIsEarlyAccessOpen(false)
+    setModalInitialEmail("")
+    setModalAutoSendOtp(false)
   }
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between">
       <div>
-        <Navbar onOpenEarlyAccess={handleOpenEarlyAccess} />
+        <Navbar onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
         <main>
           <Hero onOpenEarlyAccess={handleOpenEarlyAccess} />
           <Features />
           <Suspense fallback={null}>
             <NaturalSpeech />
             <Pricing />
-            <CtaBanner onOpenEarlyAccess={handleOpenEarlyAccess} />
+            <CtaBanner onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
             <Footer />
           </Suspense>
         </main>
@@ -49,6 +62,8 @@ export const App: React.FC = () => {
         <EarlyAccessModal 
           isOpen={isEarlyAccessOpen} 
           onClose={handleCloseEarlyAccess} 
+          initialEmail={modalInitialEmail}
+          autoSendOtp={modalAutoSendOtp}
         />
       </Suspense>
     </div>
