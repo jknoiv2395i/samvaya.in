@@ -23,14 +23,9 @@ export const Footer: React.FC = () => {
                 samvaya
               </span>
             </div>
-            <p className="font-['Inter'] text-sm sm:text-base text-neutral-500 max-w-sm leading-relaxed mb-6">
+            <p className="font-['Inter'] text-sm sm:text-base text-neutral-500 max-w-sm leading-relaxed">
               Sub-second natural voice agents built for real-time lead qualification, seamless bookings, and automated multi-channel follow-ups.
             </p>
-            {/* Live Operational Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs font-['Inter'] font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>All Systems Operational (120ms latency)</span>
-            </div>
           </div>
 
           {/* Navigation Links Col */}
