@@ -6,20 +6,20 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <footer className="relative w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6 overflow-hidden">
-      {/* Footer Card */}
-      <div className="bg-neutral-50/80 backdrop-blur-md border border-neutral-200/80 rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 md:p-14 shadow-sm flex flex-col justify-between">
+    <footer className="relative w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-0 overflow-hidden">
+      {/* Footer Card — connected directly to the bottom with top rounded corners */}
+      <div className="bg-neutral-50/80 backdrop-blur-md border-t border-x border-neutral-200/80 rounded-t-[32px] sm:rounded-t-[48px] rounded-b-none p-8 sm:p-12 md:p-14 pb-8 sm:pb-10 shadow-sm flex flex-col justify-between">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-10 border-b border-neutral-200/70">
           
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col items-start">
-            <div className="flex flex-col items-start cursor-pointer select-none mb-4 group" onClick={scrollToTop}>
+            <div className="flex items-center gap-2.5 cursor-pointer select-none mb-4 group" onClick={scrollToTop}>
               <img
                 src="/logo.svg"
                 alt="samvaya"
-                className="w-14 h-14 sm:w-16 sm:h-16 self-center object-contain mb-1 drop-shadow-xs group-hover:scale-105 transition-transform duration-200"
+                className="w-10 h-10 -ml-1 object-contain"
               />
-              <span className="font-['Jersey_25'] font-normal text-[36px] sm:text-[40px] leading-none tracking-[-1.5px] text-neutral-900 lowercase self-center text-center">
+              <span className="font-['Jersey_25'] font-normal text-[34px] leading-none tracking-[-1.5px] text-neutral-900 lowercase">
                 samvaya
               </span>
             </div>
