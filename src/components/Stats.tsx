@@ -24,21 +24,21 @@ const statsData: StatItem[] = [
 
 export const Stats: React.FC = () => {
   return (
-    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto mt-6 md:mt-8 pb-16 px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 text-center">
+    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto mt-4 sm:mt-6 md:mt-8 pb-2 sm:pb-6 px-1 sm:px-4">
+      <div className="grid grid-cols-3 gap-1.5 xs:gap-3 sm:gap-6 text-center">
         {statsData.map((stat, idx) => (
-          <div key={idx} className="flex flex-col items-center justify-center">
+          <div key={idx} className="flex flex-col items-center justify-start px-0.5">
             <div
               style={{
                 backgroundImage: "linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className="font-['Inter'] font-[300] text-4xl sm:text-5xl md:text-[59.6px] leading-[60px] tracking-[-1.8px]"
+              className="font-['Inter'] font-[300] text-2xl xs:text-3xl sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
             >
               {stat.value}
             </div>
-            <p className="text-xs sm:text-sm md:text-[14px] text-neutral-500 font-normal mt-2 tracking-normal">
+            <p className="text-[11px] xs:text-xs sm:text-sm md:text-[14px] text-neutral-500 font-normal mt-1 sm:mt-2 tracking-normal leading-tight text-center max-w-[100px] xs:max-w-none">
               {stat.label}
             </p>
           </div>

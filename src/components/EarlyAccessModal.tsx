@@ -257,12 +257,12 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-[760px] md:max-w-[820px] min-h-[380px] sm:min-h-[440px] bg-white rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-2xl border border-white/60 z-10 animate-in zoom-in-95 duration-200 grid grid-cols-1 sm:grid-cols-12">
+      <div className="relative w-full max-w-[760px] md:max-w-[820px] max-h-[90vh] overflow-y-auto sm:overflow-hidden bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-white/60 z-10 animate-in zoom-in-95 duration-200 grid grid-cols-1 sm:grid-cols-12">
         {/* Close Button */}
         <button
           onClick={handleClose}
           aria-label="Close modal"
-          className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-neutral-100/80 hover:bg-neutral-200 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-8 h-8 rounded-full bg-neutral-100/90 hover:bg-neutral-200 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
@@ -274,10 +274,10 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="sm:col-span-5 min-h-[200px] sm:min-h-[420px] flex items-center justify-center relative p-6 select-none"
+          className="sm:col-span-5 min-h-[140px] xs:min-h-[160px] sm:min-h-[420px] flex items-center justify-center relative p-4 sm:p-6 select-none"
         >
           <div className="relative flex flex-col items-center justify-center text-center">
-            <h2 className="font-['Jersey_25'] font-normal text-6xl sm:text-7xl lg:text-8xl leading-[0.85] text-neutral-900 tracking-wider">
+            <h2 className="font-['Jersey_25'] font-normal text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-[0.85] text-neutral-900 tracking-wider">
               <span className="block">JOIN</span>
               <span className="block">US</span>
             </h2>
@@ -285,14 +285,14 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
         </div>
 
         {/* Right Form Section */}
-        <div className="sm:col-span-7 p-6 sm:p-10 md:p-12 min-h-[300px] sm:min-h-[420px] flex flex-col items-center justify-center text-center bg-white relative">
+        <div className="sm:col-span-7 p-4 xs:p-6 sm:p-10 md:p-12 min-h-[280px] sm:min-h-[420px] flex flex-col items-center justify-center text-center bg-white relative">
           {/* Logo Lotus (shown on email and otp steps) */}
           {step !== "done" && (
-            <div className="mb-4 sm:mb-6">
+            <div className="mb-3 sm:mb-6">
               <img
                 src="/modal-logo.png"
                 alt="Samvaya Logo"
-                className="w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
+                className="w-24 xs:w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
               />
             </div>
           )}
@@ -301,8 +301,8 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
           {step === "email" && (
             <form onSubmit={handleEmailSubmit} className="w-full flex flex-col items-center gap-3.5 max-w-[420px] mx-auto animate-in fade-in duration-200">
               {/* Email Input Field */}
-              <div className="w-full h-[52px] sm:h-[56px] flex items-center gap-3 px-5 py-3 rounded-full border border-neutral-300/80 bg-neutral-50/50 focus-within:border-neutral-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-neutral-200 transition-all shadow-2xs">
-                <Mail className="w-5 h-5 text-neutral-400 shrink-0" />
+              <div className="w-full h-[48px] sm:h-[56px] flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neutral-300/80 bg-neutral-50/50 focus-within:border-neutral-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-neutral-200 transition-all shadow-2xs">
+                <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-neutral-400 shrink-0" />
                 <input
                   id="early-access-email"
                   name="email"
@@ -358,7 +358,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
                 type="submit"
                 disabled={loading}
                 style={{ backgroundImage: "url('/btn-bg.png')" }}
-                className="w-full sm:w-auto min-w-[173px] h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[16.9px] leading-[28px] tracking-[0px] px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
+                className="w-full sm:w-auto min-w-[155px] sm:min-w-[173px] h-[48px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[15px] sm:text-[16.9px] leading-[28px] tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
               >
                 {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Get Early Access"}
               </button>
@@ -367,9 +367,9 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
 
           {/* Step 2: Real Email OTP Verification */}
           {step === "otp" && (
-            <form onSubmit={handleVerifySubmit} className="w-full flex flex-col items-center gap-4 max-w-[420px] mx-auto animate-in fade-in duration-200">
+            <form onSubmit={handleVerifySubmit} className="w-full flex flex-col items-center gap-3.5 sm:gap-4 max-w-[420px] mx-auto animate-in fade-in duration-200">
               <div className="text-center">
-                <div className="inline-flex items-center gap-1.5 text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-1 rounded-full text-xs font-['Inter'] mb-2">
+                <div className="inline-flex items-center gap-1.5 text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-1 rounded-full text-xs font-['Inter'] mb-1.5 sm:mb-2">
                   <KeyRound className="w-3.5 h-3.5" />
                   <span>Verification code sent to your inbox</span>
                 </div>
@@ -379,7 +379,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
               </div>
 
               {/* 6 Digit OTP Inputs */}
-              <div className="flex items-center justify-center gap-2 sm:gap-2.5 my-1">
+              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 my-1">
                 {otp.map((digit, idx) => (
                   <input
                     key={idx}
@@ -393,7 +393,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
                     onChange={(e) => handleOtpChange(idx, e.target.value)}
                     onKeyDown={(e) => handleOtpKeyDown(idx, e)}
                     onPaste={handleOtpPaste}
-                    className="w-10 h-12 sm:w-11 sm:h-13 text-center font-['Inter'] font-semibold text-lg sm:text-xl rounded-xl border border-neutral-300 bg-neutral-50 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-2xs"
+                    className="w-9 h-[44px] xs:w-10 xs:h-12 sm:w-11 sm:h-13 text-center font-['Inter'] font-semibold text-base xs:text-lg sm:text-xl rounded-xl border border-neutral-300 bg-neutral-50 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-2xs"
                   />
                 ))}
               </div>

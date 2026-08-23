@@ -42,7 +42,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between overflow-x-hidden w-full">
       <div>
         <Navbar onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
         <main>

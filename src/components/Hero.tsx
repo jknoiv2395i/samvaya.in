@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
   }
 
   return (
-    <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-[calc(100vh-80px)] flex flex-col justify-between">
+    <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-0 flex flex-col justify-between pb-4 sm:pb-8">
       {/* Background Foliage Graphic Layer */}
       <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-end sm:items-center justify-center overflow-hidden">
         <img
@@ -66,8 +66,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           />
         </div>
 
-        {/* Subtitle Copy */}
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal text-center">
+        {/* Subtitle Copy - Mobile Concise / Desktop Full */}
+        <p className="sm:hidden my-6 text-sm text-neutral-600 max-w-sm mx-auto leading-relaxed font-normal text-center px-2">
+          AI voice agents that call, qualify, book, and follow up across WhatsApp and email.
+        </p>
+        <p className="hidden sm:block mt-5 text-base md:text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal text-center">
           <span className="block">AI voice agents that call every lead in seconds, qualify live on the phone, book appointments,</span>
           <span className="block">and follow up across WhatsApp and email so no lead dies in a spreadsheet.</span>
         </p>
@@ -101,7 +104,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         </form>
 
         {/* Chat Bar Image */}
-        <div className="w-full max-w-4xl lg:max-w-[960px] xl:max-w-[1060px] mx-auto mt-5 sm:mt-6 px-2 sm:px-4">
+        <div className="w-full max-w-4xl lg:max-w-[960px] xl:max-w-[1060px] mx-auto my-8 sm:my-10 md:my-12 px-2 sm:px-4">
           <img
             src="/chat-bar.png"
             alt="AI Voice Agent Prompt Interface"
@@ -111,9 +114,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
 
         {/* Key Metrics / Stats Section */}
         <Stats />
-
-        {/* Bottom Scroll / Indicator Handle */}
-        <div className="w-10 h-1 bg-neutral-400/50 rounded-full mx-auto -mt-10 mb-8" />
       </div>
     </section>
   )

@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
               contact@samvaya.in
             </a>
           </div>
-
+        </div>
         </div>
 
         {/* Bottom Navigation & Copyright Bar */}
