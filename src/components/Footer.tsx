@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 flex flex-col items-start">
             <div className="cursor-pointer select-none mb-4 group inline-flex items-center" onClick={scrollToTop}>
               <img
-                src="/logo.svg"
+                src="/footer-logo.png"
                 alt="samvaya"
                 className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 -ml-2 object-contain group-hover:scale-105 transition-transform duration-200"
               />
