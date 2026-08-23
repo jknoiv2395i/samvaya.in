@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 overflow-hidden">
       {/* Top Divider & Navigation Grid Card */}
-      <div className="bg-neutral-50/80 backdrop-blur-md border border-neutral-200/80 rounded-[36px] sm:rounded-[48px] p-10 sm:p-14 md:p-20 mb-8 shadow-sm">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 pb-16 border-b border-neutral-200/70">
+      <div className="bg-neutral-50/80 backdrop-blur-md border border-neutral-200/80 rounded-[36px] sm:rounded-[48px] pt-10 sm:pt-14 md:pt-20 px-10 sm:px-14 md:px-20 pb-0 mb-8 shadow-sm overflow-hidden flex flex-col justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 pb-12">
           
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col items-start">
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Navigation & Copyright Bar */}
-        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-['Inter'] text-neutral-500">
+        <div className="pt-4 pb-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-['Inter'] text-neutral-500">
           <p>&copy; {new Date().getFullYear()} Samvaya AI, Inc. All rights reserved.</p>
           <button 
             type="button" 
@@ -94,10 +94,10 @@ export const Footer: React.FC = () => {
           </button>
         </div>
 
-        {/* Signature Large Textured Brand Element — cropped so only top half emerges at the bottom edge */}
-        <div className="w-full h-[110px] sm:h-[150px] md:h-[190px] flex items-start justify-center overflow-hidden border-t border-neutral-200/60 mt-6 select-none relative">
+        {/* Signature Large Textured Brand Element — cropped directly at bottom card boundary */}
+        <div className="w-full -mx-10 sm:-mx-14 md:-mx-20 -mb-2 h-[80px] sm:h-[120px] md:h-[150px] flex items-start justify-center overflow-hidden select-none relative">
           <h1
-            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide text-center absolute top-2 sm:top-3"
+            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide text-center absolute top-0"
             style={{
               fontSize: "clamp(120px, 24vw, 360px)",
               backgroundImage: "url('/samvaya-stripes.jpg')",
