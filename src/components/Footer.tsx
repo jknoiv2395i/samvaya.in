@@ -86,8 +86,8 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Bar within Card */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-['Inter'] text-neutral-500">
+        {/* Bottom Navigation & Copyright Bar */}
+        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-['Inter'] text-neutral-500">
           <p>&copy; {new Date().getFullYear()} Samvaya AI, Inc. All rights reserved.</p>
           <button 
             type="button" 
@@ -98,21 +98,13 @@ export const Footer: React.FC = () => {
             <span>&uarr;</span>
           </button>
         </div>
-      </div>
 
-      {/* Signature Large Textured Brand Element */}
-      <div
-        className="relative rounded-[32px] sm:rounded-[40px] overflow-hidden flex items-end justify-center select-none"
-        style={{
-          background: "linear-gradient(to bottom, #dbeafe 0%, #eff6ff 50%, #ffffff 100%)",
-          minHeight: "220px",
-        }}
-      >
-        <div className="w-full flex items-end justify-center overflow-hidden">
+        {/* Signature Large Textured Brand Element — integrated inside */}
+        <div className="w-full pt-8 sm:pt-12 flex items-end justify-center overflow-hidden border-t border-neutral-200/60 mt-6 select-none">
           <h1
-            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide"
+            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide text-center"
             style={{
-              fontSize: "clamp(100px, 20vw, 300px)",
+              fontSize: "clamp(80px, 18vw, 280px)",
               backgroundImage: "url('/samvaya-stripes.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -126,6 +118,7 @@ export const Footer: React.FC = () => {
             SAMVAYA
           </h1>
         </div>
+
       </div>
     </footer>
   )
