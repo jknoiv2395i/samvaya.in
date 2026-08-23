@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/logo.svg"
                 alt="samvaya"
-                className="w-18 h-18 sm:w-20 sm:h-20 -ml-1 object-contain group-hover:scale-105 transition-transform duration-200"
+                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 -ml-2 object-contain group-hover:scale-105 transition-transform duration-200"
               />
             </div>
             <p className="font-['Inter'] text-sm sm:text-base text-neutral-500 max-w-sm leading-relaxed text-left">
