@@ -13,17 +13,17 @@ export const Footer: React.FC = () => {
           
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col items-start">
-            <div className="flex items-center gap-2 cursor-pointer select-none mb-4" onClick={scrollToTop}>
+            <div className="flex flex-col items-start cursor-pointer select-none mb-4 group" onClick={scrollToTop}>
               <img
                 src="/logo.svg"
                 alt="samvaya"
-                className="w-10 h-10 -ml-1 object-contain"
+                className="w-14 h-14 sm:w-16 sm:h-16 self-center object-contain mb-1 drop-shadow-xs group-hover:scale-105 transition-transform duration-200"
               />
-              <span className="font-['Jersey_25'] font-normal text-[32px] leading-none tracking-[-1.5px] text-neutral-900 lowercase">
+              <span className="font-['Jersey_25'] font-normal text-[36px] sm:text-[40px] leading-none tracking-[-1.5px] text-neutral-900 lowercase self-center text-center">
                 samvaya
               </span>
             </div>
-            <p className="font-['Inter'] text-sm sm:text-base text-neutral-500 max-w-sm leading-relaxed">
+            <p className="font-['Inter'] text-sm sm:text-base text-neutral-500 max-w-sm leading-relaxed text-left">
               Sub-second natural voice agents built for real-time lead qualification, seamless bookings, and automated multi-channel follow-ups.
             </p>
           </div>
