@@ -86,8 +86,28 @@ export const Footer: React.FC = () => {
 
         </div>
 
+        {/* Signature Large Textured Brand Element — placed above bottom bar */}
+        <div className="w-full pt-8 sm:pt-10 flex items-center justify-center overflow-hidden border-b border-neutral-200/70 select-none">
+          <h1
+            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide text-center"
+            style={{
+              fontSize: "clamp(80px, 18vw, 270px)",
+              backgroundImage: "url('/samvaya-stripes.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              opacity: 0.95,
+              marginBottom: "-0.05em",
+            }}
+          >
+            SAMVAYA
+          </h1>
+        </div>
+
         {/* Bottom Navigation & Copyright Bar */}
-        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-['Inter'] text-neutral-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-['Inter'] text-neutral-500">
           <p>&copy; {new Date().getFullYear()} Samvaya AI, Inc. All rights reserved.</p>
           <button 
             type="button" 
@@ -97,26 +117,6 @@ export const Footer: React.FC = () => {
             <span>Back to top</span>
             <span>&uarr;</span>
           </button>
-        </div>
-
-        {/* Signature Large Textured Brand Element — integrated inside */}
-        <div className="w-full pt-8 sm:pt-12 flex items-end justify-center overflow-hidden border-t border-neutral-200/60 mt-6 select-none">
-          <h1
-            className="font-['Jersey_25'] font-normal select-none leading-none tracking-wide text-center"
-            style={{
-              fontSize: "clamp(80px, 18vw, 280px)",
-              backgroundImage: "url('/samvaya-stripes.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              opacity: 0.95,
-              marginBottom: "-0.08em",
-            }}
-          >
-            SAMVAYA
-          </h1>
         </div>
 
       </div>
