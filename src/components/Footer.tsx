@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Navigation Links Col */}
-          <div className="md:col-span-2 md:col-start-7 flex flex-col gap-3">
+          <div className="md:col-span-3 md:col-start-7 flex flex-col gap-3">
             <h4 className="font-['Inter'] font-semibold text-xs sm:text-sm text-neutral-900 tracking-wider uppercase mb-1">
               Product
             </h4>
@@ -47,36 +47,14 @@ export const Footer: React.FC = () => {
             </a>
           </div>
 
-          {/* Resources Col */}
-          <div className="md:col-span-2 flex flex-col gap-3">
+          {/* Resources / Contact Col */}
+          <div className="md:col-span-3 flex flex-col gap-3">
             <h4 className="font-['Inter'] font-semibold text-xs sm:text-sm text-neutral-900 tracking-wider uppercase mb-1">
               Connect
             </h4>
             <a href="mailto:contact@samvaya.in" className="font-['Inter'] text-sm text-neutral-500 hover:text-neutral-900 transition-colors">
               contact@samvaya.in
             </a>
-            <a href="https://github.com/jknoiv2395i/samvaya.in" target="_blank" rel="noreferrer" className="font-['Inter'] text-sm text-neutral-500 hover:text-neutral-900 transition-colors">
-              GitHub Repository
-            </a>
-            <a href="#pricing" className="font-['Inter'] text-sm text-neutral-500 hover:text-neutral-900 transition-colors">
-              Support & FAQs
-            </a>
-          </div>
-
-          {/* Legal / Company */}
-          <div className="md:col-span-2 flex flex-col gap-3">
-            <h4 className="font-['Inter'] font-semibold text-xs sm:text-sm text-neutral-900 tracking-wider uppercase mb-1">
-              Company
-            </h4>
-            <span className="font-['Inter'] text-sm text-neutral-400 cursor-not-allowed">
-              Privacy Policy
-            </span>
-            <span className="font-['Inter'] text-sm text-neutral-400 cursor-not-allowed">
-              Terms of Service
-            </span>
-            <span className="font-['Inter'] text-sm text-neutral-400 cursor-not-allowed">
-              Security Overview
-            </span>
           </div>
 
         </div>
