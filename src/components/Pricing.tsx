@@ -16,7 +16,7 @@ export const Pricing: React.FC = () => {
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-tight text-neutral-900 font-serif leading-[1.05] sm:leading-[1.1] mb-0">
+        <h2 className="font-['Playfair_Display'] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[64px] tracking-[-0.04em] text-neutral-900 leading-[1.08] sm:leading-[1.1] mb-0 whitespace-nowrap">
           Start free. Scale when ready.
         </h2>
 
