@@ -25,10 +25,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <img
           src="/hero-bg.png"
           alt="Hero background foliage"
-          className="w-full h-full object-fill sm:object-cover object-top sm:object-center"
+          className="w-full h-[65%] xs:h-[72%] sm:h-full object-cover object-top sm:object-center"
         />
         {/* Soft top gradient to blend cleanly with the navbar */}
         <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
+        {/* Soft bottom gradient on mobile to blend gently with content */}
+        <div className="absolute inset-x-0 bottom-0 h-32 sm:hidden bg-gradient-to-t from-white via-white/40 to-transparent" />
       </div>
 
       {/* Main Content Layer */}
