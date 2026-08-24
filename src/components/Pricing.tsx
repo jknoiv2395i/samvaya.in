@@ -28,9 +28,9 @@ export const Pricing: React.FC = () => {
 
       {/* Main Illustrated Landscape Canvas Container */}
       <div className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px]">
-        {/* Mobile View: High-res Vertical Stack SVG Asset */}
+        {/* Mobile View: High-res Upscaled Vertical/Responsive Asset */}
         <img
-          src="/pricing-mobile.svg"
+          src="/pricing-mobile.png"
           alt="Voice Agents Pricing Canvas"
           className="sm:hidden w-full h-auto object-contain drop-shadow-md rounded-[18px]"
         />
