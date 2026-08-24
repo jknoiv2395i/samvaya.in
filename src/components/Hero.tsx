@@ -21,16 +21,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
   return (
     <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-[calc(100vh-80px)] flex flex-col justify-between">
       {/* Background Foliage Graphic Layer */}
-      <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-start sm:items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-end sm:items-center justify-center overflow-hidden">
         <img
           src="/hero-bg.png"
           alt="Hero background foliage"
-          className="w-full h-[65%] xs:h-[72%] sm:h-full object-cover object-top sm:object-center"
+          className="w-full h-[45%] xs:h-[52%] sm:h-full object-cover object-bottom sm:object-center"
         />
-        {/* Soft top gradient to blend cleanly with the navbar */}
-        <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
-        {/* Soft bottom gradient on mobile to blend gently with content */}
-        <div className="absolute inset-x-0 bottom-0 h-32 sm:hidden bg-gradient-to-t from-white via-white/40 to-transparent" />
+        {/* Soft top blend gradient on mobile into the sky */}
+        <div className="absolute inset-x-0 bottom-[35%] xs:bottom-[42%] h-32 sm:hidden bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
       </div>
 
       {/* Main Content Layer */}
