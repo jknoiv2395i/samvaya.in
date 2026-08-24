@@ -54,7 +54,6 @@ export const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        </div>
 
         {/* Bottom Navigation & Copyright Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-['Inter'] text-neutral-500">
