@@ -21,14 +21,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
   return (
     <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-[calc(100vh-80px)] flex flex-col justify-between">
       {/* Background Foliage Graphic Layer */}
-      <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-center justify-center">
+      <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-start sm:items-center justify-center overflow-hidden">
         <img
           src="/hero-bg.png"
           alt="Hero background foliage"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-fill sm:object-cover object-top sm:object-center"
         />
         {/* Soft top gradient to blend cleanly with the navbar */}
-        <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
       </div>
 
       {/* Main Content Layer */}
