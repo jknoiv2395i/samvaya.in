@@ -27,11 +27,11 @@ export const Pricing: React.FC = () => {
       </div>
 
       {/* Main Illustrated Landscape Canvas Container */}
-      <div className="relative z-10 w-full max-w-[1180px] flex items-center justify-start sm:justify-center overflow-x-auto sm:overflow-visible touch-pan-x shadow-sm select-none">
+      <div className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px]">
         <img
           src="/pricing-main.svg"
           alt="Voice Agents Pricing Canvas"
-          className="w-full min-w-[650px] sm:min-w-0 h-auto object-contain drop-shadow-md"
+          className="w-full h-auto object-contain drop-shadow-md"
         />
       </div>
 
