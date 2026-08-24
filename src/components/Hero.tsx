@@ -34,15 +34,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
       {/* Main Content Layer */}
       <div className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto px-4 text-center">
         {/* Main Headline with Flying Golden Birds */}
-        <div className="relative max-w-5xl xl:max-w-6xl mx-auto px-1">
-          {/* Left Bird Illustration - placed nicely above headline without overlapping */}
+        <div className="relative inline-block max-w-full mx-auto px-2 text-center">
+          {/* Left Bird Illustration - perfectly anchored above the start of the headline */}
           <img
             src="/bird-left.png"
             alt="Golden bird left"
-            className="absolute left-1 xs:left-3 sm:-left-14 md:-left-24 lg:-left-34 xl:-left-42 -top-7 xs:-top-9 sm:-top-2 md:top-0 w-12 xs:w-16 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
+            className="absolute -left-3 xs:-left-5 sm:-left-14 md:-left-24 lg:-left-34 xl:-left-42 -top-6 xs:-top-8 sm:-top-2 md:top-0 w-11 xs:w-15 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
           />
 
-          <h1 className="font-['Inter'] font-[300] text-[28px] min-[360px]:text-[32px] min-[390px]:text-[36px] xs:text-[42px] sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[108px] leading-[1.08] sm:leading-[1] md:leading-[88px] lg:leading-[90px] xl:leading-[96px] tracking-[-0.5px] min-[360px]:tracking-[-1px] sm:tracking-[-2px] md:tracking-[-3px] lg:tracking-[-4px] xl:tracking-[-6px] text-neutral-900">
+          <h1 className="font-['Inter'] font-[300] text-[26px] min-[350px]:text-[29px] min-[380px]:text-[33px] xs:text-[40px] sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[108px] leading-[1.1] sm:leading-[1] md:leading-[88px] lg:leading-[90px] xl:leading-[96px] tracking-[-0.5px] min-[360px]:tracking-[-0.8px] sm:tracking-[-2px] md:tracking-[-3px] lg:tracking-[-4px] xl:tracking-[-6px] text-neutral-900 text-center">
             <span className="block whitespace-nowrap">You&apos;re Paying for Clicks</span>
             <span 
               style={{
@@ -66,8 +66,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           />
         </div>
 
-        {/* Subtitle Copy - Fluid adaptive text that never breaks awkwardly */}
-        <p className="sm:hidden mt-2 mb-4 text-[10px] min-[360px]:text-[11.5px] min-[390px]:text-[12.5px] xs:text-[13px] sm:text-sm text-neutral-600 max-w-none mx-auto leading-normal font-normal text-center whitespace-nowrap px-1">
+        {/* Subtitle Copy - Perfectly Centered */}
+        <p className="sm:hidden mt-2 mb-4 text-[11px] min-[360px]:text-[12px] min-[390px]:text-[13px] text-neutral-600 max-w-[340px] xs:max-w-md mx-auto leading-normal font-normal text-center px-2">
           AI voice agents that call, qualify, book, and follow up across WhatsApp and email.
         </p>
         <p className="hidden sm:block mt-5 text-base md:text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal text-center">
