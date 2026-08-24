@@ -11,27 +11,34 @@ export const Pricing: React.FC = () => {
           <img
             src="/pricing-bird.png"
             alt="Samvaya Bird"
-            className="w-14 sm:w-22 md:w-24 h-auto object-contain drop-shadow-sm select-none pointer-events-none animate-float-slow"
+            className="w-14 sm:w-22 md:w-24 h-auto object-contain drop-shadow-sm select-none pointer-events-none"
           />
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-['Playfair_Display'] font-normal tracking-[-0.04em] text-neutral-900 leading-[1.08] sm:leading-[1.1] mb-1 sm:mb-0">
+        <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-[64px] font-['Playfair_Display'] font-normal tracking-[-0.04em] text-neutral-900 leading-[1.12] sm:leading-[1.1] mb-0">
           Start free. Scale when ready.
         </h2>
 
         {/* Section Subtitle */}
-        <p className="mt-1 sm:-mt-2 md:-mt-2.5 font-['Inter'] font-normal text-xs xs:text-sm sm:text-base md:text-[20px] leading-relaxed text-[#666666] max-w-3xl mx-auto text-center">
+        <p className="mt-0 xs:mt-0.5 sm:-mt-2 md:-mt-2.5 font-['Inter'] font-normal text-xs xs:text-sm sm:text-base md:text-[20px] leading-snug text-[#666666] max-w-3xl mx-auto text-center px-2">
           Test with 50 free minutes. Upgrade only when your pipeline demands it.
         </p>
       </div>
 
       {/* Main Illustrated Landscape Canvas Container */}
       <div className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px]">
+        {/* Mobile View: High-res Upscaled Vertical/Responsive Asset */}
+        <img
+          src="/pricing-mobile.png"
+          alt="Voice Agents Pricing Canvas"
+          className="sm:hidden w-full h-auto object-contain drop-shadow-md rounded-[18px]"
+        />
+        {/* Desktop View: Full Canvas SVG */}
         <img
           src="/pricing-main.svg"
           alt="Voice Agents Pricing Canvas"
-          className="w-full h-auto object-contain drop-shadow-md"
+          className="hidden sm:block w-full h-auto object-contain drop-shadow-md"
         />
       </div>
 

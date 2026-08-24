@@ -358,7 +358,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
                 type="submit"
                 disabled={loading}
                 style={{ backgroundImage: "url('/btn-bg.png')" }}
-                className="w-full sm:w-auto min-w-[155px] sm:min-w-[173px] h-[48px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[15px] sm:text-[16.9px] leading-[28px] tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
+                className="w-auto min-w-[170px] xs:min-w-[190px] sm:min-w-[173px] h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-[28px] tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
               >
                 {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Get Early Access"}
               </button>

@@ -3,9 +3,9 @@ import { Plus, Check, ArrowRight } from "lucide-react"
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="relative w-full py-12 sm:py-20 px-3 sm:px-6 max-w-[1560px] mx-auto overflow-hidden sm:overflow-visible">
+    <section id="features" className="relative w-full pt-8 sm:pt-20 pb-12 sm:pb-20 px-3 sm:px-6 max-w-[1560px] mx-auto overflow-visible">
       {/* Header Section */}
-      <div className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16">
+      <div className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16 pt-3 sm:pt-0">
 
         <div className="relative inline-block mx-auto max-w-full px-2">
           {/* Mobile Heading */}
@@ -21,12 +21,12 @@ export const Features: React.FC = () => {
           <img
             src="/features-bird-right.png"
             alt="Golden bird"
-            className="absolute -right-3 sm:-right-14 md:-right-16 lg:-right-20 -top-6 sm:-top-10 md:-top-12 lg:-top-14 w-12 sm:w-20 md:w-24 lg:w-28 h-auto pointer-events-none select-none z-10 animate-float-slow"
+            className="absolute -right-2 xs:right-0 sm:-right-14 md:-right-16 lg:-right-20 -top-5 sm:-top-10 md:-top-12 lg:-top-14 w-12 sm:w-20 md:w-24 lg:w-28 h-auto pointer-events-none select-none z-10"
           />
         </div>
 
         {/* Mobile Subtitle */}
-        <p className="sm:hidden mt-3 font-['Inter'] font-normal text-xs xs:text-sm leading-relaxed text-[#666666] max-w-md mx-auto text-center px-2">
+        <p className="sm:hidden mt-1 xs:mt-1.5 font-['Inter'] font-normal text-xs xs:text-sm leading-snug text-[#666666] max-w-md mx-auto text-center px-2">
           Define your criteria. Launch calls at scale. Track conversations, bookings, and recovery in real time.
         </p>
         {/* Desktop Subtitle */}
@@ -100,9 +100,9 @@ export const Features: React.FC = () => {
             </p>
             <button 
               style={{ backgroundImage: "url('/btn-bg.png')" }}
-              className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-cover bg-center bg-no-repeat text-white text-xs sm:text-sm font-medium shadow-md hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer"
+              className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[13px] xs:text-[14px] sm:text-[15px] tracking-[0px] shadow-md hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-4 h-4 stroke-[2]" />
               Create knowledge base
             </button>
           </div>
@@ -156,9 +156,9 @@ export const Features: React.FC = () => {
             <button 
               type="button"
               style={{ backgroundImage: "url('/btn-bg.png')" }}
-              className="bg-cover bg-center bg-no-repeat text-white flex items-center gap-2.5 px-5 sm:px-6 py-2.5 rounded-full hover:opacity-90 active:scale-[0.98] text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer"
+              className="bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[13px] xs:text-[14px] sm:text-[15px] tracking-[0px] flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full hover:opacity-90 active:scale-[0.98] transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 stroke-[2]" />
               Connect your number
             </button>
           </div>
@@ -171,14 +171,14 @@ export const Features: React.FC = () => {
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}
-          className="lg:col-span-6 rounded-3xl pt-5 pl-5 sm:pt-9 sm:pl-9 pr-0 pb-0 relative overflow-hidden shadow-sm flex flex-col justify-start items-start min-h-[300px] sm:min-h-[540px] lg:h-[540px]"
+          className="lg:col-span-6 rounded-3xl pt-6 pl-6 sm:pt-9 sm:pl-9 pr-0 pb-0 relative overflow-hidden shadow-sm flex flex-col justify-start items-start min-h-[360px] xs:min-h-[420px] sm:min-h-[540px] lg:h-[540px]"
         >
-          {/* Inner Dashboard Mockup SVG */}
-          <div className="w-full h-full flex items-start justify-start overflow-x-auto sm:overflow-visible touch-pan-x">
+          {/* Inner Dashboard Mockup SVG - same position on mobile and desktop */}
+          <div className="w-full h-full flex items-start justify-start overflow-hidden">
             <img
               src="/analytics-dashboard.svg"
               alt="Live telemetry and campaign analytics dashboard"
-              className="w-full max-w-full sm:min-w-[760px] md:min-w-[800px] lg:min-w-[820px] h-auto object-contain object-left-top select-none pointer-events-none drop-shadow-md translate-y-1 sm:translate-y-3"
+              className="min-w-[620px] xs:min-w-[700px] sm:min-w-[760px] md:min-w-[800px] lg:min-w-[820px] w-auto h-auto object-contain object-left-top select-none pointer-events-none drop-shadow-md translate-y-1 sm:translate-y-3 -ml-0.5 sm:ml-0"
             />
           </div>
         </div>

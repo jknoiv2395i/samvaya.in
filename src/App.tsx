@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from "react"
 import { Navbar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
+import { Stats } from "./components/Stats"
 
 const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
@@ -47,6 +48,10 @@ export const App: React.FC = () => {
         <Navbar onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
         <main>
           <Hero onOpenEarlyAccess={handleOpenEarlyAccess} />
+          {/* Mobile-only Stats section placed completely outside & below Hero section */}
+          <div className="sm:hidden w-full bg-white pt-4 pb-0">
+            <Stats />
+          </div>
           <Features />
           <Suspense fallback={null}>
             <NaturalSpeech />
