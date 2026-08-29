@@ -66,9 +66,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
           <img
             src="/logo.svg"
             alt="samvaya"
-            className="w-12 h-12 xs:w-14 xs:h-14 sm:w-14 sm:h-14 -mr-2.5 translate-y-[0.5px] object-contain"
+            className="w-10 h-10 xs:w-12 xs:h-12 -mr-2 translate-y-[0.5px] object-contain"
           />
-          <span className="font-['Jersey_25'] font-normal text-[28px] xs:text-[32px] sm:text-[32px] leading-none tracking-[-1.5px] text-neutral-900 lowercase inline-block">
+          <span className="font-['Jersey_25'] font-normal text-[24px] xs:text-[28px] leading-none tracking-[-1.5px] text-neutral-900 lowercase inline-block">
             samvaya
           </span>
         </a>
