@@ -219,6 +219,13 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
           user_id: res.data?.user?.id || null,
           verified_at: new Date().toISOString(),
         })
+
+        // Trigger automated Welcome Email
+        supabase.functions.invoke("send-welcome-email", {
+          body: { email: cleanEmail },
+        }).catch((err) => {
+          console.warn("Welcome email trigger notice:", err)
+        })
       } catch {
         // Table insert non-blocking
       }
