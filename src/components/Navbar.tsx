@@ -61,14 +61,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
             setIsMobileMenuOpen(false)
             window.scrollTo({ top: 0, behavior: "smooth" }) 
           }} 
-          className="flex items-center cursor-pointer select-none shrink-0"
+          className="flex items-center cursor-pointer select-none shrink-0 pl-1.5"
         >
-          <img
-            src="/logo.svg"
-            alt="samvaya"
-            className="w-10 h-10 xs:w-12 xs:h-12 -mr-2 translate-y-[0.5px] object-contain"
-          />
-          <span className="font-['Jersey_25'] font-normal text-[24px] xs:text-[28px] leading-none tracking-[-1.5px] text-neutral-900 lowercase inline-block">
+          <span className="font-['Jersey_25'] font-normal text-[28px] xs:text-[32px] sm:text-[34px] leading-none tracking-[-1px] text-neutral-900 lowercase inline-block">
             samvaya
           </span>
         </a>
