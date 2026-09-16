@@ -21,8 +21,8 @@ export const NaturalSpeech: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
         className="text-center relative z-10 max-w-4xl mx-auto mb-8 sm:mb-16 pt-4 sm:pt-8"
       >
         {/* Headline with Golden Flying Bird top-left */}
@@ -32,7 +32,7 @@ export const NaturalSpeech: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.6, delay: 0.35, ease: "easeOut" }}
+            transition={{ duration: 0.95, delay: 0.15, ease: "easeOut" }}
             src="/speech-bird-left.png"
             alt="Golden bird"
             className="absolute -top-7 sm:-top-13 md:-top-16 lg:-top-18 -left-3 sm:-left-9 md:-left-12 lg:-left-14 w-12 sm:w-20 md:w-26 lg:w-30 h-auto pointer-events-none select-none drop-shadow-xs z-20"
@@ -53,8 +53,8 @@ export const NaturalSpeech: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
         style={{ 
           backgroundImage: "url('/natural-speech-bg.png')",
           backgroundSize: "cover",

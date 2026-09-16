@@ -11,8 +11,8 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.95, ease: "easeOut" }}
         style={{ 
           backgroundImage: "url('/cta-nature-bg.png')",
           backgroundSize: "cover",
@@ -25,7 +25,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
           className="max-w-2xl mx-auto z-10"
         >
           <h2 className="font-['Inter'] font-medium text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.2] sm:leading-[1.15] tracking-[-0.02em] text-[#4A5568]">
@@ -38,7 +38,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.45, ease: "easeOut" }}
+          transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
           className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0"
         >
           <button

@@ -9,8 +9,8 @@ export const Features: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
         className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16 pt-3 sm:pt-0"
       >
         <div className="relative inline-block mx-auto max-w-full px-2">
@@ -28,7 +28,7 @@ export const Features: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.6, delay: 0.35, ease: "easeOut" }}
+            transition={{ duration: 0.95, delay: 0.15, ease: "easeOut" }}
             src="/features-bird-right.png"
             alt="Golden bird"
             className="absolute -right-2 xs:right-0 sm:-right-14 md:-right-16 lg:-right-20 -top-5 sm:-top-10 md:-top-12 lg:-top-14 w-12 sm:w-20 md:w-24 lg:w-28 h-auto pointer-events-none select-none z-10"
@@ -52,8 +52,8 @@ export const Features: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           className="lg:col-span-8 w-full relative"
         >
           {/* Top-Left Artistic Flower Badge Accent */}
@@ -92,8 +92,8 @@ export const Features: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1.5, delay: 0.25, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, delay: 0.12, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-2.png')",
             backgroundSize: "cover",
@@ -132,8 +132,8 @@ export const Features: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-3.png')",
             backgroundSize: "cover",
@@ -190,8 +190,8 @@ export const Features: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 1.5, delay: 0.25, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, delay: 0.12, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-4.png')",
             backgroundSize: "cover",

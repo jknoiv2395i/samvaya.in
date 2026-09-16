@@ -38,14 +38,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
+          transition={{ duration: 0.85, ease: "easeOut" }}
           className="relative inline-block max-w-full mx-auto px-2 text-center"
         >
           {/* Left Bird Illustration */}
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.35, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
             src="/bird-left.png"
             alt="Golden bird left"
             className="absolute -left-3 xs:-left-5 sm:-left-14 md:-left-24 lg:-left-34 xl:-left-42 -top-6 xs:-top-8 sm:-top-2 md:top-0 w-11 xs:w-15 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.45, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
             src="/bird-right.png"
             alt="Golden bird right"
             className="hidden sm:block absolute sm:-right-14 md:-right-22 lg:-right-32 xl:-right-40 sm:top-8 md:top-10 lg:top-14 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.85, delay: 0.2, ease: "easeOut" }}
         >
           <p className="sm:hidden mt-2 mb-4 text-[11px] min-[360px]:text-[12px] min-[390px]:text-[13px] text-neutral-600 max-w-[340px] xs:max-w-md mx-auto leading-normal font-normal text-center px-2">
             AI voice agents that call, qualify, book, and follow up across WhatsApp and email.
@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <motion.form
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.3, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           onSubmit={handleSubmit}
           className="mt-3 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 max-w-2xl mx-auto"
         >
@@ -129,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.6, delay: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.95, delay: 0.35, ease: "easeOut" }}
           className="w-full max-w-full xs:max-w-[440px] sm:max-w-4xl lg:max-w-[1040px] xl:max-w-[1140px] mx-auto mt-3 sm:mt-10 mb-6 sm:mb-12 px-1 xs:px-2 sm:px-4"
         >
           <img
@@ -143,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, delay: 0.85, ease: "easeOut" }}
+          transition={{ duration: 0.9, delay: 0.45, ease: "easeOut" }}
           className="hidden sm:block"
         >
           <Stats />

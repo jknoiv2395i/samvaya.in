@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 1.6, ease: "easeOut" }}
+        transition={{ duration: 0.95, ease: "easeOut" }}
         className="relative mx-3 sm:mx-6 lg:mx-8 rounded-[32px] sm:rounded-[44px] overflow-hidden border border-[#d6eef8]/80 bg-gradient-to-b from-[#e8f6fc] via-[#f7fbfd] to-white shadow-[0_10px_35px_-15px_rgba(40,120,180,0.12)]"
       >
         {/* Top Floating Glass Navigation Bar */}

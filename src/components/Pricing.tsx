@@ -24,8 +24,8 @@ export const Pricing: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
         className="flex flex-col items-center text-center mb-8 md:mb-12 px-2"
       >
         {/* Golden Bird Icon */}
@@ -33,7 +33,7 @@ export const Pricing: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.6, delay: 0.25, ease: "easeOut" }}
+          transition={{ duration: 0.95, delay: 0.15, ease: "easeOut" }}
           className="mb-2 flex items-center justify-center"
         >
           <img
@@ -58,8 +58,8 @@ export const Pricing: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
         className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px] bg-white border border-neutral-100 group"
       >
         <video
