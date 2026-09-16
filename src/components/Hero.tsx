@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Mail } from "lucide-react"
+import { motion } from "framer-motion"
 import { Stats } from "./Stats"
 
 interface HeroProps {
@@ -34,9 +35,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
       {/* Main Content Layer */}
       <div className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto px-4 text-center">
         {/* Main Headline with Flying Golden Birds */}
-        <div className="relative inline-block max-w-full mx-auto px-2 text-center">
-          {/* Left Bird Illustration - perfectly anchored above the start of the headline */}
-          <img
+        <motion.div 
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative inline-block max-w-full mx-auto px-2 text-center"
+        >
+          {/* Left Bird Illustration */}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8, x: -16 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             src="/bird-left.png"
             alt="Golden bird left"
             className="absolute -left-3 xs:-left-5 sm:-left-14 md:-left-24 lg:-left-34 xl:-left-42 -top-6 xs:-top-8 sm:-top-2 md:top-0 w-11 xs:w-15 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
@@ -59,24 +68,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           </h1>
 
           {/* Right Bird Illustration - Desktop Only */}
-          <img
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8, x: 16 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             src="/bird-right.png"
             alt="Golden bird right"
             className="hidden sm:block absolute sm:-right-14 md:-right-22 lg:-right-32 xl:-right-40 sm:top-8 md:top-10 lg:top-14 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
           />
-        </div>
+        </motion.div>
 
-        {/* Subtitle Copy - Perfectly Centered */}
-        <p className="sm:hidden mt-2 mb-4 text-[11px] min-[360px]:text-[12px] min-[390px]:text-[13px] text-neutral-600 max-w-[340px] xs:max-w-md mx-auto leading-normal font-normal text-center px-2">
-          AI voice agents that call, qualify, book, and follow up across WhatsApp and email.
-        </p>
-        <p className="hidden sm:block mt-5 text-base md:text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal text-center">
-          <span className="block">AI voice agents that call every lead in seconds, qualify live on the phone, book appointments,</span>
-          <span className="block">and follow up across WhatsApp and email so no lead dies in a spreadsheet.</span>
-        </p>
+        {/* Subtitle Copy */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="sm:hidden mt-2 mb-4 text-[11px] min-[360px]:text-[12px] min-[390px]:text-[13px] text-neutral-600 max-w-[340px] xs:max-w-md mx-auto leading-normal font-normal text-center px-2">
+            AI voice agents that call, qualify, book, and follow up across WhatsApp and email.
+          </p>
+          <p className="hidden sm:block mt-5 text-base md:text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal text-center">
+            <span className="block">AI voice agents that call every lead in seconds, qualify live on the phone, book appointments,</span>
+            <span className="block">and follow up across WhatsApp and email so no lead dies in a spreadsheet.</span>
+          </p>
+        </motion.div>
 
         {/* Early Access Email Form */}
-        <form
+        <motion.form
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           onSubmit={handleSubmit}
           className="mt-3 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 max-w-2xl mx-auto"
         >
@@ -100,16 +121,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           >
             Get Early Access
           </button>
-        </form>
+        </motion.form>
 
         {/* Chat Bar Image */}
-        <div className="w-full max-w-full xs:max-w-[440px] sm:max-w-4xl lg:max-w-[1040px] xl:max-w-[1140px] mx-auto mt-3 sm:mt-10 mb-6 sm:mb-12 px-1 xs:px-2 sm:px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full max-w-full xs:max-w-[440px] sm:max-w-4xl lg:max-w-[1040px] xl:max-w-[1140px] mx-auto mt-3 sm:mt-10 mb-6 sm:mb-12 px-1 xs:px-2 sm:px-4"
+        >
           <img
             src="/chat-bar.png"
             alt="AI Voice Agent Prompt Interface"
             className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.08)] scale-105 sm:scale-105 md:scale-110"
           />
-        </div>
+        </motion.div>
 
         {/* Key Metrics / Stats Section - Desktop inside Hero */}
         <div className="hidden sm:block">
@@ -119,4 +145,3 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
     </section>
   )
 }
-

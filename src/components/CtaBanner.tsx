@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 interface CtaBannerProps {
   onOpenEarlyAccess?: () => void
@@ -7,7 +8,11 @@ interface CtaBannerProps {
 export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
   return (
     <section id="resources" className="relative w-full py-8 sm:py-12 px-3 sm:px-6 lg:px-8 max-w-[1560px] mx-auto overflow-hidden">
-      <div 
+      <motion.div 
+        initial={{ opacity: 0, y: 36, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
           backgroundImage: "url('/cta-nature-bg.png')",
           backgroundSize: "cover",
@@ -16,14 +21,26 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
         className="w-full min-h-[280px] xs:min-h-[320px] sm:min-h-[440px] md:min-h-[500px] lg:min-h-[540px] rounded-[28px] sm:rounded-[40px] relative overflow-hidden shadow-lg flex flex-col items-center justify-between py-8 sm:py-16 md:py-20 px-4 sm:px-6 text-center"
       >
         {/* Title */}
-        <div className="max-w-2xl mx-auto z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="max-w-2xl mx-auto z-10"
+        >
           <h2 className="font-['Inter'] font-medium text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.2] sm:leading-[1.15] tracking-[-0.02em] text-[#4A5568]">
             Start articulating your <br className="hidden sm:inline" /> business better
           </h2>
-        </div>
+        </motion.div>
 
         {/* Get Early Access CTA Button */}
-        <div className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0">
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0"
+        >
           <button
             type="button"
             onClick={onOpenEarlyAccess}
@@ -32,8 +49,8 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           >
             Get Early Access
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

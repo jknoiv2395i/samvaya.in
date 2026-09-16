@@ -1,12 +1,18 @@
 import React from "react"
 import { Plus, Check, ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
 
 export const Features: React.FC = () => {
   return (
     <section id="features" className="relative w-full pt-8 sm:pt-20 pb-12 sm:pb-20 px-3 sm:px-6 max-w-[1560px] mx-auto overflow-visible">
       {/* Header Section */}
-      <div className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16 pt-3 sm:pt-0">
-
+      <motion.div 
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16 pt-3 sm:pt-0"
+      >
         <div className="relative inline-block mx-auto max-w-full px-2">
           {/* Mobile Heading */}
           <h2 className="sm:hidden font-['Playfair_Display'] font-normal text-3xl xs:text-4xl leading-[1.15] tracking-[-0.03em] text-neutral-900 whitespace-normal">
@@ -17,8 +23,12 @@ export const Features: React.FC = () => {
             Set the rules. We handle the calls.
           </h2>
 
-          {/* Golden bird illustration top-right of the headline */}
-          <img
+          {/* Golden bird illustration top-right */}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8, x: 16 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             src="/features-bird-right.png"
             alt="Golden bird"
             className="absolute -right-2 xs:right-0 sm:-right-14 md:-right-16 lg:-right-20 -top-5 sm:-top-10 md:-top-12 lg:-top-14 w-12 sm:w-20 md:w-24 lg:w-28 h-auto pointer-events-none select-none z-10"
@@ -34,13 +44,19 @@ export const Features: React.FC = () => {
           <span className="block whitespace-nowrap">Define your qualification criteria, launch outbound calling at scale, and monitor live transcripts,</span>
           <span className="block whitespace-nowrap">bookings, and recovery telemetry in real time.</span>
         </p>
-      </div>
+      </motion.div>
 
       {/* Grid of 4 Feature Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
         {/* Card 1: Deploy in minutes (Blue Gradient, col-span-8) */}
-        <div className="lg:col-span-8 w-full relative">
-          {/* Top-Left Artistic Flower Badge Accent (outside overflow-hidden) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-8 w-full relative"
+        >
+          {/* Top-Left Artistic Flower Badge Accent */}
           <img
             src="/flower-badge.png"
             alt="Artistic flower badge"
@@ -61,7 +77,7 @@ export const Features: React.FC = () => {
               </h3>
             </div>
 
-            {/* Inner Prompt Input Mockup Image extending flush to the right edge */}
+            {/* Inner Prompt Input Mockup Image */}
             <div className="w-full flex justify-end pl-3 sm:pl-10 -mt-1 sm:-mt-4">
               <img
                 src="/deploy-prompt-card.svg"
@@ -70,10 +86,14 @@ export const Features: React.FC = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Card 2: Knowledge Base (Warm Orange/Noise Texture, col-span-4) */}
-        <div 
+        {/* Card 2: Knowledge Base (Warm Orange, col-span-4) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           style={{ 
             backgroundImage: "url('/card-bg-2.png')",
             backgroundSize: "cover",
@@ -81,7 +101,7 @@ export const Features: React.FC = () => {
           }}
           className="lg:col-span-4 rounded-3xl py-6 xs:py-8 sm:py-12 pl-3 xs:pl-4 sm:pl-16 pr-0 relative overflow-hidden shadow-sm flex flex-col justify-center min-h-[340px] xs:min-h-[360px] sm:min-h-[420px] lg:h-[540px]"
         >
-          {/* Inner White Card - rounded on left, flush on right */}
+          {/* Inner White Card */}
           <div className="w-full bg-white rounded-l-xl sm:rounded-l-2xl rounded-r-none py-5 xs:py-6 sm:py-8 px-3 xs:px-4 sm:px-8 text-center shadow-lg flex flex-col items-center justify-center">
             {/* File Icon with Flower Illustration */}
             <div className="w-full flex items-center justify-center mb-2 xs:mb-3">
@@ -99,6 +119,7 @@ export const Features: React.FC = () => {
               Upload files, so your agents have information to answer callers.
             </p>
             <button 
+              type="button"
               style={{ backgroundImage: "url('/btn-bg.png')" }}
               className="flex items-center justify-center gap-2 px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 rounded-full bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[12px] xs:text-[13px] sm:text-[15px] tracking-[0px] shadow-md hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
             >
@@ -106,10 +127,14 @@ export const Features: React.FC = () => {
               Create knowledge base
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Card 3: Connect your phone number (Deep Green Gradient, col-span-6) */}
-        <div 
+        {/* Card 3: Connect your phone number (Deep Green, col-span-6) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ 
             backgroundImage: "url('/card-bg-3.png')",
             backgroundSize: "cover",
@@ -119,7 +144,6 @@ export const Features: React.FC = () => {
         >
           {/* Inner White Card */}
           <div className="w-full max-w-[440px] h-auto sm:h-[490px] bg-white rounded-xl sm:rounded-2xl p-4 xs:p-5 sm:p-8 shadow-md flex flex-col justify-between items-start text-left">
-            {/* Top: Header */}
             <div>
               <h4 className="text-base xs:text-lg sm:text-2xl md:text-[26px] font-semibold text-neutral-900 leading-tight whitespace-normal sm:whitespace-nowrap">
                 Connect your phone number
@@ -129,7 +153,6 @@ export const Features: React.FC = () => {
               </p>
             </div>
 
-            {/* Middle: Checklist with symmetric top and bottom spacing */}
             <div className="my-4 sm:my-6 space-y-2.5 sm:space-y-3">
               {[
                 "Works with every major provider",
@@ -162,10 +185,14 @@ export const Features: React.FC = () => {
               Connect your number
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Card 4: Live Telemetry & Analytics Dashboard (Lavender/Soft Purple, col-span-6) */}
-        <div 
+        {/* Card 4: Live Telemetry & Analytics Dashboard (col-span-6) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           style={{ 
             backgroundImage: "url('/card-bg-4.png')",
             backgroundSize: "cover",
@@ -173,7 +200,7 @@ export const Features: React.FC = () => {
           }}
           className="lg:col-span-6 rounded-3xl pt-6 pl-6 sm:pt-9 sm:pl-9 pr-0 pb-0 relative overflow-hidden shadow-sm flex flex-col justify-start items-start min-h-[360px] xs:min-h-[420px] sm:min-h-[540px] lg:h-[540px]"
         >
-          {/* Inner Dashboard Mockup SVG - same position on mobile and desktop */}
+          {/* Inner Dashboard Mockup SVG */}
           <div className="w-full h-full flex items-start justify-start overflow-hidden">
             <img
               src="/analytics-dashboard.svg"
@@ -181,7 +208,7 @@ export const Features: React.FC = () => {
               className="min-w-[620px] xs:min-w-[700px] sm:min-w-[760px] md:min-w-[800px] lg:min-w-[820px] w-auto h-auto object-contain object-left-top select-none pointer-events-none drop-shadow-md translate-y-1 sm:translate-y-3 -ml-0.5 sm:ml-0"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 export const NaturalSpeech: React.FC = () => {
-
   return (
     <section id="voice" className="relative w-full pt-10 sm:pt-16 pb-16 sm:pb-24 px-2 sm:px-8 mx-auto overflow-hidden sm:overflow-visible">
       {/* Foliage Landscape Background Layer — shifted lower */}
@@ -18,11 +18,21 @@ export const NaturalSpeech: React.FC = () => {
       </div>
 
       {/* Top Header */}
-      <div className="text-center relative z-10 max-w-4xl mx-auto mb-8 sm:mb-16 pt-4 sm:pt-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-70px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center relative z-10 max-w-4xl mx-auto mb-8 sm:mb-16 pt-4 sm:pt-8"
+      >
         {/* Headline with Golden Flying Bird top-left */}
         <div className="relative inline-block mx-auto max-w-full px-2">
           {/* Bird top-left */}
-          <img
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8, x: -16 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             src="/speech-bird-left.png"
             alt="Golden bird"
             className="absolute -top-7 sm:-top-13 md:-top-16 lg:-top-18 -left-3 sm:-left-9 md:-left-12 lg:-left-14 w-12 sm:w-20 md:w-26 lg:w-30 h-auto pointer-events-none select-none drop-shadow-xs z-20"
@@ -37,10 +47,14 @@ export const NaturalSpeech: React.FC = () => {
         <p className="mt-1 xs:mt-1.5 sm:mt-3 font-['Inter'] font-normal text-xs xs:text-sm sm:text-base md:text-[20px] leading-snug sm:leading-relaxed md:leading-[27.9px] tracking-[0px] text-[#666666] max-w-4xl mx-auto text-center px-2">
           Indistinguishable from your best sales rep—powered by 120ms response times, natural breathing pauses, and fluid turn-taking.
         </p>
-      </div>
+      </motion.div>
 
       {/* Main Container / Dashboard Card */}
-      <div 
+      <motion.div 
+        initial={{ opacity: 0, y: 36, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
           backgroundImage: "url('/natural-speech-bg.png')",
           backgroundSize: "cover",
@@ -51,7 +65,7 @@ export const NaturalSpeech: React.FC = () => {
       >
         <div className="flex flex-row items-end sm:items-center justify-between sm:justify-center gap-1 sm:gap-6 md:gap-8 w-full py-0 px-0 sm:px-0">
           
-          {/* Left Mini Sidebar Asset - 8px gap from top and left, 0 gap at bottom */}
+          {/* Left Mini Sidebar Asset */}
           <div className="w-[48%] xs:w-[50%] md:w-auto flex items-end md:items-stretch justify-start shrink-0 translate-y-0 md:translate-y-[9px] self-end">
             <img
               src="/voice-agents-sidebar.png"
@@ -78,7 +92,7 @@ export const NaturalSpeech: React.FC = () => {
                   alt="Voice interaction orb"
                   className="w-48 xs:w-56 sm:w-96 md:w-[420px] h-auto object-contain select-none pointer-events-none drop-shadow-md scale-150 xs:scale-155 sm:scale-150"
                 />
-                {/* Center Start Speaking Badge / Button (original compact size) */}
+                {/* Center Start Speaking Badge / Button */}
                 <button
                   type="button"
                   className="absolute px-2.5 xs:px-3 sm:px-5 py-1 sm:py-2 rounded-full bg-white/95 backdrop-blur-md shadow-[0_4px_14px_rgba(0,0,0,0.08)] border border-white/90 text-[9px] xs:text-[10px] sm:text-[13px] font-medium text-neutral-800 hover:bg-white hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-95 z-10 select-none whitespace-nowrap"
@@ -100,7 +114,7 @@ export const NaturalSpeech: React.FC = () => {
           </div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
