@@ -105,11 +105,11 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between overflow-x-hidden w-full">
+    <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between overflow-x-clip w-full">
       {/* Framer-Motion Scroll Progress Animation Bar */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-blue-500 via-indigo-500 to-amber-500 origin-left z-[999] pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-600 via-indigo-500 to-amber-500 origin-left z-[999] pointer-events-none shadow-sm"
       />
 
       <div>
