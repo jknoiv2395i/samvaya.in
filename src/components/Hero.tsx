@@ -35,7 +35,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
       {/* Main Content Layer */}
       <div className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto px-4 text-center">
         {/* Main Headline with Flying Golden Birds */}
-        <div className="relative inline-block max-w-full mx-auto px-2 text-center">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+          className="relative inline-block max-w-full mx-auto px-2 text-center"
+        >
           {/* Left Bird Illustration */}
           <img
             src="/bird-left.png"
@@ -67,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
             alt="Golden bird right"
             className="hidden sm:block absolute sm:-right-14 md:-right-22 lg:-right-32 xl:-right-40 sm:top-8 md:top-10 lg:top-14 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
           />
-        </div>
+        </motion.div>
 
         {/* Subtitle Copy */}
         <motion.div
