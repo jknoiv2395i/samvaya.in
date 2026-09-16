@@ -5,10 +5,6 @@
     box-sizing: border-box;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   html.lenis, html.lenis body {
     height: auto;
   }
@@ -110,6 +106,17 @@
 
 .animate-orb-shimmer {
   animation: orbShimmer 5s ease-in-out infinite;
+}
+
+/* GPU acceleration for animated elements */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Reduce paint for off-screen content */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 

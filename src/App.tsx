@@ -34,10 +34,12 @@ export const App: React.FC = () => {
   // Initialize luxury momentum smooth scrolling via Lenis
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       touchMultiplier: 1.5,
+      syncTouch: true,
+      autoResize: true,
     })
 
     // Expose on window for components

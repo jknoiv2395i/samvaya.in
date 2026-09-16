@@ -9,6 +9,8 @@ export const NaturalSpeech: React.FC = () => {
         <img
           src="/hero-bg.png"
           alt="Hero background foliage"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain sm:object-cover object-bottom sm:object-center select-none"
         />
         {/* Soft top gradient to blend cleanly with section above */}

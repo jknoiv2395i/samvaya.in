@@ -82,6 +82,8 @@ export const Features: React.FC = () => {
               <img
                 src="/deploy-prompt-card.svg"
                 alt="Prompt card interface"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover object-left-top drop-shadow-md rounded-tl-2xl"
               />
             </div>
@@ -204,6 +206,8 @@ export const Features: React.FC = () => {
             <img
               src="/analytics-dashboard.svg"
               alt="Live telemetry and campaign analytics dashboard"
+              loading="lazy"
+              decoding="async"
               className="min-w-[620px] xs:min-w-[700px] sm:min-w-[760px] md:min-w-[800px] lg:min-w-[820px] w-auto h-auto object-contain object-left-top select-none pointer-events-none drop-shadow-md translate-y-1 sm:translate-y-3 -ml-0.5 sm:ml-0"
             />
           </div>

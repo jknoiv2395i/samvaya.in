@@ -34,7 +34,7 @@ export const Pricing: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: false, margin: "-80px" }}
+        viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="flex flex-col items-center text-center mb-8 md:mb-12 px-2"
       >
@@ -42,7 +42,7 @@ export const Pricing: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.95, delay: 0.15, ease: "easeOut" }}
           className="mb-2 flex items-center justify-center"
         >
@@ -77,6 +77,7 @@ export const Pricing: React.FC = () => {
           loop
           muted={isMuted}
           playsInline
+          preload="none"
           className="w-full h-auto object-cover rounded-[20px] sm:rounded-[28px] drop-shadow-md cursor-pointer"
           onClick={toggleSound}
         />
