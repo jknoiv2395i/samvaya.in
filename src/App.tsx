@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from "react"
+import Lenis from "lenis"
 import { Navbar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
@@ -20,6 +21,28 @@ export const App: React.FC = () => {
   const [modalInitialEmail, setModalInitialEmail] = useState("")
   const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
+
+  // Initialize luxury momentum smooth scrolling via Lenis
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.5,
+    })
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    const rafId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
+  }, [])
 
   // Sync hash changes
   useEffect(() => {
