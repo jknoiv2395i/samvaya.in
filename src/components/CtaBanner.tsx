@@ -34,13 +34,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
         </motion.div>
 
         {/* Get Early Access CTA Button */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
-          className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0"
-        >
+        <div className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0">
           <button
             type="button"
             onClick={onOpenEarlyAccess}
@@ -49,7 +43,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           >
             Get Early Access
           </button>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   )
