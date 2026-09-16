@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
 import { Stats } from "./components/Stats"
 import { LegalModal, LegalDocType } from "./components/LegalModal"
+import { DocsLayout } from "./components/DocsLayout"
 
 const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
@@ -12,10 +13,26 @@ const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.
 const EarlyAccessModal = lazy(() => import("./components/EarlyAccessModal").then(m => ({ default: m.EarlyAccessModal })))
 
 export const App: React.FC = () => {
+  const [currentView, setCurrentView] = useState<"home" | "docs">(() => {
+    return window.location.hash === "#docs" ? "docs" : "home"
+  })
   const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false)
   const [modalInitialEmail, setModalInitialEmail] = useState("")
   const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
+
+  // Sync hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === "#docs") {
+        setCurrentView("docs")
+      } else if (currentView === "docs") {
+        setCurrentView("home")
+      }
+    }
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
+  }, [currentView])
 
   // Auto-open waitlist popup after 5 seconds
   useEffect(() => {
@@ -42,6 +59,17 @@ export const App: React.FC = () => {
     setIsEarlyAccessOpen(false)
     setModalInitialEmail("")
     setModalAutoSendOtp(false)
+  }
+
+  if (currentView === "docs") {
+    return (
+      <DocsLayout 
+        onBackToHome={() => {
+          window.location.hash = ""
+          setCurrentView("home")
+        }} 
+      />
+    )
   }
 
   return (
