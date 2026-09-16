@@ -28,9 +28,9 @@ const statsData: StatItem[] = [
 
 export const Stats: React.FC = () => {
   return (
-    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto mt-2 sm:mt-6 md:mt-8 pb-2 sm:pb-6 px-2 sm:px-4">
-      {/* Mobile: 4-item horizontal grid (grid-cols-4) / Desktop: original 3-item grid (sm:grid-cols-3) */}
-      <div className="grid grid-cols-4 sm:grid-cols-3 gap-1.5 xs:gap-2.5 sm:gap-6 text-center items-center">
+    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto mt-2 sm:mt-6 md:mt-8 pb-3 sm:pb-6 px-4">
+      {/* Mobile: 2 rows of 2 (grid-cols-2) / Desktop: original 3 columns (sm:grid-cols-3) */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-5 sm:gap-6 text-center items-center">
         {statsData.map((stat, idx) => (
           <div 
             key={idx} 
@@ -44,11 +44,11 @@ export const Stats: React.FC = () => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className="font-['Inter'] font-[300] text-xl xs:text-2xl sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
+              className="font-['Inter'] font-[300] text-3xl xs:text-4xl sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
             >
               {stat.value}
             </div>
-            <p className="text-[10px] xs:text-[11px] sm:text-sm md:text-[14px] text-neutral-500 font-normal mt-0.5 sm:mt-2 tracking-normal leading-tight sm:leading-relaxed text-center">
+            <p className="text-xs xs:text-sm md:text-[14px] text-neutral-500 font-normal mt-1 sm:mt-2 tracking-normal leading-tight sm:leading-relaxed text-center">
               {stat.label}
             </p>
           </div>
