@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Mail, X, Loader2, KeyRound } from "lucide-react"
 import { supabase, isSupabaseConfigured } from "../lib/supabase"
 
@@ -55,8 +56,6 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
     }
     return () => clearInterval(timer)
   }, [step, resendTimer])
-
-  if (!isOpen) return null
 
   const sendEmailOtp = async (targetEmail?: string) => {
     const emailToUse = (targetEmail || email).trim().toLowerCase()
@@ -256,202 +255,257 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8">
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black/40 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
-        onClick={handleClose}
-      />
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8 pointer-events-auto">
+          {/* Backdrop */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="fixed inset-0 bg-black/40 backdrop-blur-md"
+            onClick={handleClose}
+          />
 
-      {/* Modal Dialog */}
-      <div className="relative w-full max-w-[760px] md:max-w-[820px] max-h-[90vh] overflow-y-auto sm:overflow-hidden bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-white/60 z-10 animate-in zoom-in-95 duration-200 grid grid-cols-1 sm:grid-cols-12">
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          aria-label="Close modal"
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-8 h-8 rounded-full bg-neutral-100/90 hover:bg-neutral-200 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer"
-        >
-          <X className="w-4 h-4" />
-        </button>
+          {/* Modal Dialog */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.94, y: 14 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            transition={{ 
+              type: "spring", 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.75 
+            }}
+            className="relative w-full max-w-[760px] md:max-w-[820px] max-h-[90vh] overflow-y-auto sm:overflow-hidden bg-white rounded-[24px] sm:rounded-[36px] shadow-2xl border border-white/60 z-10 grid grid-cols-1 sm:grid-cols-12"
+          >
+            {/* Close Button */}
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
+              onClick={handleClose}
+              aria-label="Close modal"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-8 h-8 rounded-full bg-neutral-100/90 hover:bg-neutral-200 text-neutral-600 flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </motion.button>
 
-        {/* Left Cloud Section with "JOIN US" */}
-        <div 
-          style={{
-            backgroundImage: "url('/modal-clouds-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="sm:col-span-5 min-h-[140px] xs:min-h-[160px] sm:min-h-[420px] flex items-center justify-center relative p-4 sm:p-6 select-none"
-        >
-          <div className="relative flex flex-col items-center justify-center text-center">
-            <h2 className="font-['Jersey_25'] font-normal text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-[0.85] text-neutral-900 tracking-wider">
-              <span className="block">JOIN</span>
-              <span className="block">US</span>
-            </h2>
-          </div>
-        </div>
-
-        {/* Right Form Section */}
-        <div className="sm:col-span-7 p-4 xs:p-6 sm:p-10 md:p-12 min-h-[280px] sm:min-h-[420px] flex flex-col items-center justify-center text-center bg-white relative">
-          {/* Logo Lotus (shown on email and otp steps) */}
-          {step !== "done" && (
-            <div className="mb-3 sm:mb-6">
-              <img
-                src="/modal-logo.png"
-                alt="Samvaya Logo"
-                className="w-24 xs:w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
-              />
+            {/* Left Cloud Section with "JOIN US" */}
+            <div 
+              style={{
+                backgroundImage: "url('/modal-clouds-bg.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className="sm:col-span-5 min-h-[140px] xs:min-h-[160px] sm:min-h-[420px] flex items-center justify-center relative p-4 sm:p-6 select-none"
+            >
+              <div className="relative flex flex-col items-center justify-center text-center">
+                <h2 className="font-['Jersey_25'] font-normal text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-[0.85] text-neutral-900 tracking-wider">
+                  <span className="block">JOIN</span>
+                  <span className="block">US</span>
+                </h2>
+              </div>
             </div>
-          )}
 
-          {/* Step 1: Email Input */}
-          {step === "email" && (
-            <form onSubmit={handleEmailSubmit} className="w-full flex flex-col items-center gap-3.5 max-w-[420px] mx-auto animate-in fade-in duration-200">
-              {/* Email Input Field */}
-              <div className="w-full h-[48px] sm:h-[56px] flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neutral-300/80 bg-neutral-50/50 focus-within:border-neutral-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-neutral-200 transition-all shadow-2xs">
-                <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-neutral-400 shrink-0" />
-                <input
-                  id="early-access-email"
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@example.com"
-                  required
-                  autoComplete="email"
-                  autoCapitalize="none"
-                  autoCorrect="off"
-                  spellCheck="false"
-                  list="common-email-providers"
-                  className="w-full bg-transparent font-['Inter'] text-sm sm:text-base text-neutral-800 placeholder-neutral-400 outline-none"
-                />
-                <datalist id="common-email-providers">
-                  {email && !email.includes("@") && (
-                    <>
-                      <option value={`${email}@gmail.com`} />
-                      <option value={`${email}@yahoo.com`} />
-                      <option value={`${email}@outlook.com`} />
-                      <option value={`${email}@icloud.com`} />
-                      <option value={`${email}@hotmail.com`} />
-                    </>
-                  )}
-                </datalist>
-              </div>
-
-              {/* Quick autofill domain chips */}
-              {email && !email.includes("@") && (
-                <div className="flex flex-wrap items-center justify-center gap-1.5 animate-in fade-in duration-150">
-                  {["@gmail.com", "@outlook.com", "@yahoo.com", "@icloud.com"].map((domain) => (
-                    <button
-                      key={domain}
-                      type="button"
-                      onClick={() => setEmail(`${email}${domain}`)}
-                      className="px-2.5 py-1 text-xs font-['Inter'] font-medium bg-neutral-100 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 text-neutral-600 rounded-full border border-neutral-200 transition-all cursor-pointer select-none"
-                    >
-                      {domain}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {errorMessage && (
-                <p className="font-['Inter'] text-xs text-red-500 font-medium">
-                  {errorMessage}
-                </p>
-              )}
-
-              {/* Get Early Access CTA Button */}
-              <button
-                type="submit"
-                disabled={loading}
-                style={{ backgroundImage: "url('/btn-bg.png')" }}
-                className="w-auto min-w-[170px] xs:min-w-[190px] sm:min-w-[173px] h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-[28px] tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
-              >
-                {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Get Early Access"}
-              </button>
-            </form>
-          )}
-
-          {/* Step 2: Real Email OTP Verification */}
-          {step === "otp" && (
-            <form onSubmit={handleVerifySubmit} className="w-full flex flex-col items-center gap-3.5 sm:gap-4 max-w-[420px] mx-auto animate-in fade-in duration-200">
-              <div className="text-center">
-                <div className="inline-flex items-center gap-1.5 text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-1 rounded-full text-xs font-['Inter'] mb-1.5 sm:mb-2">
-                  <KeyRound className="w-3.5 h-3.5" />
-                  <span>Verification code sent to your inbox</span>
-                </div>
-                <p className="font-['Inter'] text-xs sm:text-sm text-neutral-600">
-                  Enter the 6-digit code sent to <strong className="text-neutral-900 font-medium">{email}</strong>
-                </p>
-              </div>
-
-              {/* 6 Digit OTP Inputs */}
-              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 my-1">
-                {otp.map((digit, idx) => (
-                  <input
-                    key={idx}
-                    ref={(el) => {
-                      otpInputsRef.current[idx] = el
-                    }}
-                    type="text"
-                    inputMode="numeric"
-                    maxLength={1}
-                    value={digit}
-                    onChange={(e) => handleOtpChange(idx, e.target.value)}
-                    onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                    onPaste={handleOtpPaste}
-                    className="w-9 h-[44px] xs:w-10 xs:h-12 sm:w-11 sm:h-13 text-center font-['Inter'] font-semibold text-base xs:text-lg sm:text-xl rounded-xl border border-neutral-300 bg-neutral-50 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-2xs"
-                  />
-                ))}
-              </div>
-
-              {errorMessage && (
-                <p className="font-['Inter'] text-xs text-red-500 font-medium -mt-2">
-                  {errorMessage}
-                </p>
-              )}
-
-              {/* Verify Button */}
-              <button
-                type="submit"
-                disabled={loading}
-                style={{ backgroundImage: "url('/btn-bg.png')" }}
-                className="w-full sm:w-auto min-w-[173px] h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[16.9px] leading-[28px] tracking-[0px] px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center disabled:opacity-60"
-              >
-                {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Verify & Join"}
-              </button>
-
-              {/* Resend OTP Link */}
-              <div className="text-center">
-                {resendTimer > 0 ? (
-                  <span className="font-['Inter'] text-xs text-neutral-400">
-                    Resend code in {resendTimer}s
-                  </span>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => sendEmailOtp()}
-                    className="font-['Inter'] text-xs text-neutral-600 hover:text-neutral-900 underline font-medium cursor-pointer"
+            {/* Right Form Section */}
+            <div className="sm:col-span-7 p-4 xs:p-6 sm:p-10 md:p-12 min-h-[280px] sm:min-h-[420px] flex flex-col items-center justify-center text-center bg-white relative">
+              {/* Logo Lotus (shown on email and otp steps) */}
+              <AnimatePresence>
+                {step !== "done" && (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                    className="mb-3 sm:mb-6"
                   >
-                    Resend OTP
-                  </button>
+                    <img
+                      src="/modal-logo.png"
+                      alt="Samvaya Logo"
+                      className="w-24 xs:w-28 sm:w-32 md:w-36 h-auto mx-auto object-contain drop-shadow-2xs"
+                    />
+                  </motion.div>
                 )}
-              </div>
-            </form>
-          )}
+              </AnimatePresence>
 
-          {/* Step 3: Success Screen with User Artwork */}
-          {step === "done" && (
-            <div className="flex flex-col items-center justify-center w-full py-4 animate-in fade-in zoom-in-95 duration-200">
-              <img
-                src="/success-artwork.jpg"
-                alt="Verified & On The List"
-                className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain rounded-2xl drop-shadow-sm select-none pointer-events-none"
-              />
+              {/* Step Transitions */}
+              <AnimatePresence mode="wait">
+                {/* Step 1: Email Input */}
+                {step === "email" && (
+                  <motion.form 
+                    key="step-email"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    onSubmit={handleEmailSubmit} 
+                    className="w-full flex flex-col items-center gap-3.5 max-w-[420px] mx-auto"
+                  >
+                    {/* Email Input Field */}
+                    <div className="w-full h-[48px] sm:h-[56px] flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neutral-300/80 bg-neutral-50/50 focus-within:border-neutral-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-neutral-200 transition-all shadow-2xs">
+                      <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-neutral-400 shrink-0" />
+                      <input
+                        id="early-access-email"
+                        name="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your@example.com"
+                        required
+                        autoComplete="email"
+                        autoCapitalize="none"
+                        autoCorrect="off"
+                        spellCheck="false"
+                        list="common-email-providers"
+                        className="w-full bg-transparent font-['Inter'] text-sm sm:text-base text-neutral-800 placeholder-neutral-400 outline-none"
+                      />
+                      <datalist id="common-email-providers">
+                        {email && !email.includes("@") && (
+                          <>
+                            <option value={`${email}@gmail.com`} />
+                            <option value={`${email}@yahoo.com`} />
+                            <option value={`${email}@outlook.com`} />
+                            <option value={`${email}@icloud.com`} />
+                            <option value={`${email}@hotmail.com`} />
+                          </>
+                        )}
+                      </datalist>
+                    </div>
+
+                    {/* Quick autofill domain chips */}
+                    {email && !email.includes("@") && (
+                      <div className="flex flex-wrap items-center justify-center gap-1.5 animate-in fade-in duration-150">
+                        {["@gmail.com", "@outlook.com", "@yahoo.com", "@icloud.com"].map((domain) => (
+                          <button
+                            key={domain}
+                            type="button"
+                            onClick={() => setEmail(`${email}${domain}`)}
+                            className="px-2.5 py-1 text-xs font-['Inter'] font-medium bg-neutral-100 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 text-neutral-600 rounded-full border border-neutral-200 transition-all cursor-pointer select-none"
+                          >
+                            {domain}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {errorMessage && (
+                      <p className="font-['Inter'] text-xs text-red-500 font-medium">
+                        {errorMessage}
+                      </p>
+                    )}
+
+                    {/* Get Early Access CTA Button */}
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      style={{ backgroundImage: "url('/btn-bg.png')" }}
+                      className="w-auto min-w-[170px] xs:min-w-[190px] sm:min-w-[173px] h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-[28px] tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mt-1 disabled:opacity-60"
+                    >
+                      {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Get Early Access"}
+                    </button>
+                  </motion.form>
+                )}
+
+                {/* Step 2: Real Email OTP Verification */}
+                {step === "otp" && (
+                  <motion.form 
+                    key="step-otp"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    onSubmit={handleVerifySubmit} 
+                    className="w-full flex flex-col items-center gap-3.5 sm:gap-4 max-w-[420px] mx-auto"
+                  >
+                    <div className="text-center">
+                      <div className="inline-flex items-center gap-1.5 text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-1 rounded-full text-xs font-['Inter'] mb-1.5 sm:mb-2">
+                        <KeyRound className="w-3.5 h-3.5" />
+                        <span>Verification code sent to your inbox</span>
+                      </div>
+                      <p className="font-['Inter'] text-xs sm:text-sm text-neutral-600">
+                        Enter the 6-digit code sent to <strong className="text-neutral-900 font-medium">{email}</strong>
+                      </p>
+                    </div>
+
+                    {/* 6 Digit OTP Inputs */}
+                    <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 my-1">
+                      {otp.map((digit, idx) => (
+                        <input
+                          key={idx}
+                          ref={(el) => {
+                            otpInputsRef.current[idx] = el
+                          }}
+                          type="text"
+                          inputMode="numeric"
+                          maxLength={1}
+                          value={digit}
+                          onChange={(e) => handleOtpChange(idx, e.target.value)}
+                          onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                          onPaste={handleOtpPaste}
+                          className="w-9 h-[44px] xs:w-10 xs:h-12 sm:w-11 sm:h-13 text-center font-['Inter'] font-semibold text-base xs:text-lg sm:text-xl rounded-xl border border-neutral-300 bg-neutral-50 focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-2xs"
+                        />
+                      ))}
+                    </div>
+
+                    {errorMessage && (
+                      <p className="font-['Inter'] text-xs text-red-500 font-medium -mt-2">
+                        {errorMessage}
+                      </p>
+                    )}
+
+                    {/* Verify Button */}
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      style={{ backgroundImage: "url('/btn-bg.png')" }}
+                      className="w-full sm:w-auto min-w-[173px] h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[16.9px] leading-[28px] tracking-[0px] px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center disabled:opacity-60"
+                    >
+                      {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : "Verify & Join"}
+                    </button>
+
+                    {/* Resend OTP Link */}
+                    <div className="text-center">
+                      {resendTimer > 0 ? (
+                        <span className="font-['Inter'] text-xs text-neutral-400">
+                          Resend code in {resendTimer}s
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => sendEmailOtp()}
+                          className="font-['Inter'] text-xs text-neutral-600 hover:text-neutral-900 underline font-medium cursor-pointer"
+                        >
+                          Resend OTP
+                        </button>
+                      )}
+                    </div>
+                  </motion.form>
+                )}
+
+                {/* Step 3: Success Screen with User Artwork */}
+                {step === "done" && (
+                  <motion.div 
+                    key="step-done"
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex flex-col items-center justify-center w-full py-4"
+                  >
+                    <img
+                      src="/success-artwork.jpg"
+                      alt="Verified & On The List"
+                      className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain rounded-2xl drop-shadow-sm select-none pointer-events-none"
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          )}
+          </motion.div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   )
 }

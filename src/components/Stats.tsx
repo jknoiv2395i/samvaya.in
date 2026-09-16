@@ -13,7 +13,7 @@ const statsData: StatItem[] = [
   },
   {
     value: "10,000+",
-    label: "Conversions",
+    label: "Conversations",
   },
   {
     value: "<2",

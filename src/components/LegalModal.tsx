@@ -1,4 +1,5 @@
 import React from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { X, ShieldCheck, FileText, Lock } from "lucide-react"
 
 export type LegalDocType = "privacy" | "terms" | "security" | null
@@ -9,16 +10,33 @@ interface LegalModalProps {
 }
 
 export const LegalModal: React.FC<LegalModalProps> = ({ docType, onClose }) => {
-  if (!docType) return null
-
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-      <div 
-        className="fixed inset-0" 
-        onClick={onClose} 
-        aria-hidden="true"
-      />
-      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-neutral-200 overflow-hidden z-10 flex flex-col max-h-[85vh] my-auto">
+    <AnimatePresence>
+      {Boolean(docType) && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto pointer-events-auto">
+          {/* Backdrop */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={onClose} 
+            aria-hidden="true"
+          />
+          {/* Modal Card */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.94, y: 14 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 8 }}
+            transition={{ 
+              type: "spring", 
+              damping: 28, 
+              stiffness: 350,
+              mass: 0.75 
+            }}
+            className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-neutral-200 overflow-hidden z-10 flex flex-col max-h-[85vh] my-auto"
+          >
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 bg-neutral-50/80 sticky top-0 z-20">
           <div className="flex items-center gap-2.5">
@@ -185,7 +203,9 @@ export const LegalModal: React.FC<LegalModalProps> = ({ docType, onClose }) => {
             Close
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
+  )}
+</AnimatePresence>
   )
 }
