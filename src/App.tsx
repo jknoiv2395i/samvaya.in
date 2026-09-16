@@ -1,5 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react"
 import Lenis from "lenis"
+import { motion, useScroll, useSpring } from "framer-motion"
 import { Navbar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
@@ -21,6 +22,14 @@ export const App: React.FC = () => {
   const [modalInitialEmail, setModalInitialEmail] = useState("")
   const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
+
+  // Framer-motion scroll progress animation with smooth spring dampening
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
 
   // Initialize luxury momentum smooth scrolling via Lenis
   useEffect(() => {
@@ -97,6 +106,12 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between overflow-x-hidden w-full">
+      {/* Framer-Motion Scroll Progress Animation Bar */}
+      <motion.div
+        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-blue-500 via-indigo-500 to-amber-500 origin-left z-[999] pointer-events-none"
+      />
+
       <div>
         <Navbar onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
         <main>
