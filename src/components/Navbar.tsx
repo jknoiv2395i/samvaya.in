@@ -25,8 +25,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
       const el = document.getElementById(id)
       if (el) {
         const offset = 80 // account for sticky navbar height
-        const top = el.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top, behavior: "smooth" })
+        const lenisInstance = (window as unknown as { lenis?: { scrollTo: (target: HTMLElement, options?: { offset?: number; duration?: number }) => void } }).lenis
+        if (lenisInstance) {
+          lenisInstance.scrollTo(el, { offset: -offset, duration: 1.4 })
+        } else {
+          const top = el.getBoundingClientRect().top + window.scrollY - offset
+          window.scrollTo({ top, behavior: "smooth" })
+        }
       }
     } else {
       setIsMobileMenuOpen(false)

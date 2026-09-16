@@ -34,11 +34,14 @@ export const App: React.FC = () => {
   // Initialize luxury momentum smooth scrolling via Lenis
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       touchMultiplier: 1.5,
     })
+
+    // Expose on window for components
+    ;(window as unknown as { lenis?: Lenis }).lenis = lenis
 
     function raf(time: number) {
       lenis.raf(time)
@@ -50,6 +53,7 @@ export const App: React.FC = () => {
     return () => {
       cancelAnimationFrame(rafId)
       lenis.destroy()
+      delete (window as unknown as { lenis?: Lenis }).lenis
     }
   }, [])
 
