@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react"
 const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Contact Us", href: "mailto:debramyabrato@gmail.com" },
+  { label: "Contact Us", href: "mailto:ramyabrato@samvaya.in" },
 ]
 
 interface NavbarProps {

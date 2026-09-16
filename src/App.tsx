@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar"
 import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
 import { Stats } from "./components/Stats"
+import { LegalModal, LegalDocType } from "./components/LegalModal"
 
 const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
@@ -14,6 +15,7 @@ export const App: React.FC = () => {
   const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false)
   const [modalInitialEmail, setModalInitialEmail] = useState("")
   const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
+  const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
 
   // Auto-open waitlist popup after 5 seconds
   useEffect(() => {
@@ -57,7 +59,7 @@ export const App: React.FC = () => {
             <NaturalSpeech />
             <Pricing />
             <CtaBanner onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
-            <Footer />
+            <Footer onOpenLegal={(doc) => setActiveLegalDoc(doc)} />
           </Suspense>
         </main>
       </div>
@@ -71,6 +73,12 @@ export const App: React.FC = () => {
           autoSendOtp={modalAutoSendOtp}
         />
       </Suspense>
+
+      {/* Trust & Legal Modal (Privacy Policy, Terms of Service, Security) */}
+      <LegalModal 
+        docType={activeLegalDoc} 
+        onClose={() => setActiveLegalDoc(null)} 
+      />
     </div>
   )
 }
