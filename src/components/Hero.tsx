@@ -135,9 +135,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
 
         {/* Chat Bar Image */}
         <motion.div 
-          initial={{ opacity: 0, y: 30, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 35, scale: 0.95, filter: "blur(6px)" }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-full xs:max-w-[440px] sm:max-w-4xl lg:max-w-[1040px] xl:max-w-[1140px] mx-auto mt-3 sm:mt-10 mb-6 sm:mb-12 px-1 xs:px-2 sm:px-4"
         >
           <img
