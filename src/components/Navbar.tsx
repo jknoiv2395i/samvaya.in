@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => {
             const isActive = href.startsWith("#") && activeSection === href.replace("#", "")
             return (
@@ -83,8 +83,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
                 key={label}
                 href={href}
                 onClick={(e) => handleNavClick(e, href)}
-                className={`text-[11px] font-semibold tracking-[0.16em] uppercase transition-colors duration-150 ${
-                  isActive ? "text-neutral-950" : "text-neutral-500 hover:text-neutral-950"
+                className={`font-['Inter'] text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-150 ${
+                  isActive ? "text-neutral-950 font-semibold" : "text-neutral-600 hover:text-neutral-950"
                 }`}
               >
                 {label}
