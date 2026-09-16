@@ -52,8 +52,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           />
 
           <h1 className="font-['Inter'] font-[300] text-[26px] min-[350px]:text-[29px] min-[380px]:text-[33px] xs:text-[40px] sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[108px] leading-[1.1] sm:leading-[1] md:leading-[88px] lg:leading-[90px] xl:leading-[96px] tracking-[-0.5px] min-[360px]:tracking-[-0.8px] sm:tracking-[-2px] md:tracking-[-3px] lg:tracking-[-4px] xl:tracking-[-6px] text-neutral-900 text-center">
-            <span className="block whitespace-nowrap">You&apos;re Paying for Clicks</span>
-            <span 
+            <motion.span 
+              initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="block whitespace-nowrap"
+            >
+              You&apos;re Paying for Clicks
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1.0, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 backgroundImage: "url('/text-texture.jpg')",
                 backgroundSize: "cover",
@@ -64,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
               className="block whitespace-nowrap bg-clip-text text-transparent"
             >
               Not Conversions.
-            </span>
+            </motion.span>
           </h1>
 
           {/* Right Bird Illustration - Desktop Only */}
