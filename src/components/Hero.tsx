@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
               }}
               className="block whitespace-nowrap bg-clip-text text-transparent"
             >
-              Not Conversations.
+              Not Conversions.
             </span>
           </h1>
 
