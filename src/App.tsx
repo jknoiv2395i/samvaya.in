@@ -129,7 +129,10 @@ export const App: React.FC = () => {
             <NaturalSpeech />
             <Pricing />
             <CtaBanner onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
-            <Footer onOpenLegal={(doc) => setActiveLegalDoc(doc)} />
+            <Footer 
+              onOpenLegal={(doc) => setActiveLegalDoc(doc)} 
+              onOpenEarlyAccess={() => handleOpenEarlyAccess()} 
+            />
           </Suspense>
         </main>
       </div>
