@@ -8,6 +8,7 @@ interface StatMetric {
   formatCommas?: boolean
   duration?: number
   label: string
+  mobileOnly?: boolean
 }
 
 const statsData: StatMetric[] = [
@@ -37,6 +38,7 @@ const statsData: StatMetric[] = [
     suffix: "%",
     duration: 1.8,
     label: "Cost reduction",
+    mobileOnly: true,
   },
 ]
 
@@ -104,8 +106,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 export const Stats: React.FC = () => {
   return (
     <div className="w-full max-w-5xl xl:max-w-6xl mx-auto mt-2 sm:mt-6 md:mt-8 pb-3 sm:pb-6 px-4">
-      {/* 2 columns on mobile, 4 columns on tablet & desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-5 sm:gap-y-6 text-center items-center">
+      {/* Mobile: 2x2 grid (grid-cols-2) / PC View: 3 columns (sm:grid-cols-3) */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-5 sm:gap-y-6 text-center items-center">
         {statsData.map((stat, idx) => (
           <motion.div 
             key={idx}
@@ -113,7 +115,9 @@ export const Stats: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-            className="flex flex-col items-center justify-center py-1 sm:py-0"
+            className={`flex flex-col items-center justify-center py-1 sm:py-0 ${
+              stat.mobileOnly ? "sm:hidden" : ""
+            }`}
           >
             <div
               style={{
@@ -121,7 +125,7 @@ export const Stats: React.FC = () => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className="font-['Inter'] font-[300] text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
+              className="font-['Inter'] font-[300] text-3xl xs:text-4xl sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
             >
               <AnimatedCounter
                 target={stat.target}
