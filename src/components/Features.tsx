@@ -7,10 +7,10 @@ export const Features: React.FC = () => {
     <section id="features" className="relative w-full pt-8 sm:pt-20 pb-12 sm:pb-20 px-3 sm:px-6 max-w-[1560px] mx-auto overflow-visible">
       {/* Header Section */}
       <motion.div 
-        initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="text-center relative max-w-5xl mx-auto mb-10 sm:mb-16 pt-3 sm:pt-0"
       >
         <div className="relative inline-block mx-auto max-w-full px-2">
@@ -25,10 +25,10 @@ export const Features: React.FC = () => {
 
           {/* Golden bird illustration top-right */}
           <motion.img
-            initial={{ opacity: 0, scale: 0.8, x: 16 }}
-            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1.6, delay: 0.35, ease: "easeOut" }}
             src="/features-bird-right.png"
             alt="Golden bird"
             className="absolute -right-2 xs:right-0 sm:-right-14 md:-right-16 lg:-right-20 -top-5 sm:-top-10 md:-top-12 lg:-top-14 w-12 sm:w-20 md:w-24 lg:w-28 h-auto pointer-events-none select-none z-10"
@@ -48,12 +48,12 @@ export const Features: React.FC = () => {
 
       {/* Grid of 4 Feature Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
-        {/* Card 1: Deploy in minutes (Blue Gradient, col-span-8) */}
+        {/* Card 1: Deploy in minutes */}
         <motion.div 
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           className="lg:col-span-8 w-full relative"
         >
           {/* Top-Left Artistic Flower Badge Accent */}
@@ -88,12 +88,12 @@ export const Features: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Card 2: Knowledge Base (Warm Orange, col-span-4) */}
+        {/* Card 2: Knowledge Base */}
         <motion.div 
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.5, delay: 0.25, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-2.png')",
             backgroundSize: "cover",
@@ -103,7 +103,6 @@ export const Features: React.FC = () => {
         >
           {/* Inner White Card */}
           <div className="w-full bg-white rounded-l-xl sm:rounded-l-2xl rounded-r-none py-5 xs:py-6 sm:py-8 px-3 xs:px-4 sm:px-8 text-center shadow-lg flex flex-col items-center justify-center">
-            {/* File Icon with Flower Illustration */}
             <div className="w-full flex items-center justify-center mb-2 xs:mb-3">
               <img
                 src="/kb-file-icon.png"
@@ -129,12 +128,12 @@ export const Features: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Card 3: Connect your phone number (Deep Green, col-span-6) */}
+        {/* Card 3: Connect your phone number */}
         <motion.div 
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-3.png')",
             backgroundSize: "cover",
@@ -187,12 +186,12 @@ export const Features: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Card 4: Live Telemetry & Analytics Dashboard (col-span-6) */}
+        {/* Card 4: Live Telemetry & Analytics Dashboard */}
         <motion.div 
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.5, delay: 0.25, ease: "easeOut" }}
           style={{ 
             backgroundImage: "url('/card-bg-4.png')",
             backgroundSize: "cover",

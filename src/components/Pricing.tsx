@@ -22,18 +22,18 @@ export const Pricing: React.FC = () => {
       
       {/* Top Header Badge & Text */}
       <motion.div 
-        initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-70px" }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="flex flex-col items-center text-center mb-8 md:mb-12 px-2"
       >
         {/* Golden Bird Icon */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          transition={{ duration: 1.6, delay: 0.25, ease: "easeOut" }}
           className="mb-2 flex items-center justify-center"
         >
           <img
@@ -56,10 +56,10 @@ export const Pricing: React.FC = () => {
 
       {/* Main Illustrated Landscape Canvas Container - Video Player */}
       <motion.div 
-        initial={{ opacity: 0, y: 36, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
         className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px] bg-white border border-neutral-100 group"
       >
         <video

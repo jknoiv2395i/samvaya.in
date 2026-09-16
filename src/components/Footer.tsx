@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { LegalDocType } from "./LegalModal"
 
 interface FooterProps {
@@ -13,8 +14,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
   return (
     <footer className="relative w-full overflow-hidden pt-4 sm:pt-8 pb-4 sm:pb-8">
       {/* Outer Card with subtle sky-to-clean-white aura matching Samvaya's brand art */}
-      <div className="relative mx-3 sm:mx-6 lg:mx-8 rounded-[32px] sm:rounded-[44px] overflow-hidden border border-[#d6eef8]/80 bg-gradient-to-b from-[#e8f6fc] via-[#f7fbfd] to-white shadow-[0_10px_35px_-15px_rgba(40,120,180,0.12)]">
-        
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+        className="relative mx-3 sm:mx-6 lg:mx-8 rounded-[32px] sm:rounded-[44px] overflow-hidden border border-[#d6eef8]/80 bg-gradient-to-b from-[#e8f6fc] via-[#f7fbfd] to-white shadow-[0_10px_35px_-15px_rgba(40,120,180,0.12)]"
+      >
         {/* Top Floating Glass Navigation Bar */}
         <div className="px-6 sm:px-10 md:px-14 pt-8 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-white/80">
           
@@ -89,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </footer>
   )
 }

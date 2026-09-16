@@ -9,10 +9,10 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
   return (
     <section id="resources" className="relative w-full py-8 sm:py-12 px-3 sm:px-6 lg:px-8 max-w-[1560px] mx-auto overflow-hidden">
       <motion.div 
-        initial={{ opacity: 0, y: 36, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
         style={{ 
           backgroundImage: "url('/cta-nature-bg.png')",
           backgroundSize: "cover",
@@ -22,10 +22,10 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
       >
         {/* Title */}
         <motion.div 
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           className="max-w-2xl mx-auto z-10"
         >
           <h2 className="font-['Inter'] font-medium text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.2] sm:leading-[1.15] tracking-[-0.02em] text-[#4A5568]">
@@ -35,10 +35,10 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
 
         {/* Get Early Access CTA Button */}
         <motion.div 
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 1.5, delay: 0.45, ease: "easeOut" }}
           className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0"
         >
           <button

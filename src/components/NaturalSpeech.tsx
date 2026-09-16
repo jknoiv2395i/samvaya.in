@@ -19,20 +19,20 @@ export const NaturalSpeech: React.FC = () => {
 
       {/* Top Header */}
       <motion.div 
-        initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-70px" }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="text-center relative z-10 max-w-4xl mx-auto mb-8 sm:mb-16 pt-4 sm:pt-8"
       >
         {/* Headline with Golden Flying Bird top-left */}
         <div className="relative inline-block mx-auto max-w-full px-2">
           {/* Bird top-left */}
           <motion.img
-            initial={{ opacity: 0, scale: 0.8, x: -16 }}
-            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1.6, delay: 0.35, ease: "easeOut" }}
             src="/speech-bird-left.png"
             alt="Golden bird"
             className="absolute -top-7 sm:-top-13 md:-top-16 lg:-top-18 -left-3 sm:-left-9 md:-left-12 lg:-left-14 w-12 sm:w-20 md:w-26 lg:w-30 h-auto pointer-events-none select-none drop-shadow-xs z-20"
@@ -51,10 +51,10 @@ export const NaturalSpeech: React.FC = () => {
 
       {/* Main Container / Dashboard Card */}
       <motion.div 
-        initial={{ opacity: 0, y: 36, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
         style={{ 
           backgroundImage: "url('/natural-speech-bg.png')",
           backgroundSize: "cover",
