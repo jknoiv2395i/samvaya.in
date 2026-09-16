@@ -44,11 +44,11 @@ export const Stats: React.FC = () => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className="font-['Inter'] font-[300] text-3xl xs:text-4xl sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
+              className="font-['Inter'] font-[300] text-4xl xs:text-[42px] sm:text-5xl md:text-[59.6px] leading-tight sm:leading-[60px] tracking-tight sm:tracking-[-1.8px] whitespace-nowrap"
             >
               {stat.value}
             </div>
-            <p className="text-xs xs:text-sm md:text-[14px] text-neutral-500 font-normal mt-1 sm:mt-2 tracking-normal leading-tight sm:leading-relaxed text-center">
+            <p className="text-[13px] xs:text-sm md:text-[14px] text-neutral-600 font-normal mt-1 sm:mt-2 tracking-normal leading-tight sm:leading-relaxed text-center">
               {stat.label}
             </p>
           </div>
