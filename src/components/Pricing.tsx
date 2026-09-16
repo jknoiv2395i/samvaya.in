@@ -1,10 +1,20 @@
 import React, { useState, useRef } from "react"
 import { Volume2, VolumeX } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 
 export const Pricing: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const videoContainerRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: videoContainerRef,
+    offset: ["start end", "end start"],
+  })
+
+  // Smooth fade-in as entering viewport, stays full opacity while centered, and fades out as scrolling past
+  const opacity = useTransform(scrollYProgress, [0, 0.18, 0.72, 0.96], [0, 1, 1, 0])
+  const scale = useTransform(scrollYProgress, [0, 0.18, 0.72, 0.96], [0.97, 1, 1, 0.97])
 
   const toggleSound = () => {
     if (videoRef.current) {
@@ -24,7 +34,7 @@ export const Pricing: React.FC = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         className="flex flex-col items-center text-center mb-8 md:mb-12 px-2"
       >
@@ -32,7 +42,7 @@ export const Pricing: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.95, delay: 0.15, ease: "easeOut" }}
           className="mb-2 flex items-center justify-center"
         >
@@ -56,10 +66,8 @@ export const Pricing: React.FC = () => {
 
       {/* Main Illustrated Landscape Canvas Container - Video Player */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
+        ref={videoContainerRef}
+        style={{ opacity, scale }}
         className="relative z-10 w-full max-w-[1180px] flex items-center justify-center overflow-hidden shadow-sm select-none rounded-[20px] sm:rounded-[28px] bg-white border border-neutral-100 group"
       >
         <video
