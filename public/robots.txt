@@ -1,0 +1,21 @@
+# Robots.txt for Samvaya (https://www.samvaya.in)
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /supabase/
+
+# Generative Engine Optimization (GEO) - Explicit Crawl Access for AI Search Engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.samvaya.in/sitemap.xml
+
