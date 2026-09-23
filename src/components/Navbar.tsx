@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Docs", href: "#docs" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Book a Demo", href: "https://cal.com/samvaya/samvaya", isExternal: true },
   { label: "Contact Us", href: "mailto:ramyabrato@samvaya.in" },
 ]
 
@@ -76,13 +77,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(({ label, href }) => {
+          {NAV_LINKS.map(({ label, href, isExternal }) => {
             const isActive = href.startsWith("#") && activeSection === href.replace("#", "")
             return (
               <a
                 key={label}
                 href={href}
-                onClick={(e) => handleNavClick(e, href)}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                onClick={(e) => !isExternal && handleNavClick(e, href)}
                 className={`font-['Inter'] text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-150 ${
                   isActive ? "text-neutral-950 font-semibold" : "text-neutral-600 hover:text-neutral-950"
                 }`}
@@ -128,11 +131,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-2.5 max-w-5xl mx-auto bg-white/95 backdrop-blur-2xl border border-white/90 rounded-[32px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.15)] animate-in fade-in slide-in-from-top-3 duration-200 flex flex-col gap-6">
           <nav className="flex flex-col space-y-4 pt-1">
-            {NAV_LINKS.map(({ label, href }) => (
+            {NAV_LINKS.map(({ label, href, isExternal }) => (
               <a
                 key={label}
                 href={href}
-                onClick={(e) => handleNavClick(e, href)}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                onClick={(e) => !isExternal && handleNavClick(e, href)}
                 className="text-[17px] font-medium text-neutral-900 hover:text-black transition-colors px-1"
               >
                 {label}

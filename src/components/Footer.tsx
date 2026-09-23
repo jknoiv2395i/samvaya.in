@@ -121,6 +121,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenEarlyAccess }
                   Documentation
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://cal.com/samvaya/samvaya" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-neutral-900 transition-colors font-medium text-neutral-800 flex items-center gap-1 group"
+                >
+                  <span>Book a Demo</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </a>
+              </li>
             </ul>
           </div>
 

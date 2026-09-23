@@ -492,13 +492,28 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="flex flex-col items-center justify-center w-full py-4"
+                    className="flex flex-col items-center justify-center w-full py-4 text-center"
                   >
                     <img
                       src="/success-artwork.jpg"
                       alt="Verified & On The List"
                       className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain rounded-2xl drop-shadow-sm select-none pointer-events-none"
                     />
+
+                    <div className="mt-4 flex flex-col items-center gap-2.5">
+                      <p className="font-['Inter'] text-xs sm:text-sm text-neutral-600 max-w-xs">
+                        Want to skip the waitlist? Book a priority demo with our founding team:
+                      </p>
+                      <a
+                        href="https://cal.com/samvaya/samvaya"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ backgroundImage: "url('/btn-bg.png')" }}
+                        className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-cover bg-center text-white font-['Inter'] font-normal text-xs sm:text-sm shadow-sm hover:opacity-90 transition-all duration-200 cursor-pointer"
+                      >
+                        Schedule on Cal.com &rarr;
+                      </a>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -33,8 +33,8 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           </h2>
         </motion.div>
 
-        {/* Get Early Access CTA Button */}
-        <div className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0">
+        {/* CTAs */}
+        <div className="z-10 flex flex-col sm:flex-row items-center justify-center gap-3 mt-auto pt-4 sm:pt-0">
           <button
             type="button"
             onClick={onOpenEarlyAccess}
@@ -43,6 +43,15 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
           >
             Get Early Access
           </button>
+          <a
+            href="https://cal.com/samvaya/samvaya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 xs:px-7 sm:px-8 py-3 sm:py-4 rounded-full bg-white/80 hover:bg-white text-neutral-900 border border-neutral-300/80 font-['Inter'] font-medium text-xs xs:text-sm sm:text-base tracking-[0px] shadow-sm hover:shadow transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap inline-flex items-center gap-2"
+          >
+            <span>Book a Demo</span>
+            <span className="text-neutral-500">&rarr;</span>
+          </a>
         </div>
       </motion.div>
     </section>
