@@ -147,25 +147,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
             </ul>
           </div>
 
-          {/* Right Logo / 3D Monogram Graphic Block */}
+          {/* Right Logo Block */}
           <div className="col-span-1 lg:col-span-2 p-6 sm:p-8 lg:p-10 flex items-center justify-center bg-[#E5E3DD]">
-            <div className="w-full flex items-center justify-center p-4">
-              {/* Isometric 3D Wireframe Monogram representation like Heron AI */}
-              <svg 
-                viewBox="0 0 160 160" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-28 sm:w-32 lg:w-36 h-auto drop-shadow-sm select-none"
-              >
-                {/* 3D Isometric 'S' block */}
-                <path d="M40 35 L90 10 L130 30 L80 55 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#EAE8E3" />
-                <path d="M40 35 L40 75 L80 95 L80 55 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#E0DDD6" />
-                <path d="M80 55 L130 30 L130 70 L80 95 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#D7D3C9" />
-                
-                <path d="M30 85 L70 65 L110 85 L70 105 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#EAE8E3" />
-                <path d="M30 85 L30 125 L70 145 L70 105 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#E0DDD6" />
-                <path d="M70 105 L110 85 L110 125 L70 145 Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" fill="#D7D3C9" />
-              </svg>
+            <div className="w-full flex flex-col items-center justify-center p-4 gap-3 text-center">
+              <img 
+                src="/footer-logo.png" 
+                alt="Samvaya Lotus" 
+                className="w-20 sm:w-24 lg:w-28 h-auto object-contain select-none transition-transform duration-300 hover:scale-105" 
+              />
+              <span className="font-['Jersey_25'] font-normal text-3xl lg:text-[34px] leading-none text-neutral-900 tracking-tight lowercase">
+                samvaya
+              </span>
             </div>
           </div>
 
