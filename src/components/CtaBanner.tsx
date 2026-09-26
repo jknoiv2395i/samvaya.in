@@ -33,8 +33,8 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ calLink }) => {
           </h2>
         </motion.div>
 
-        {/* CTAs */}
-        <div className="z-10 flex flex-col sm:flex-row items-center justify-center gap-3 mt-auto pt-4 sm:pt-0">
+        {/* CTA */}
+        <div className="z-10 flex flex-col items-center mt-auto pt-4 sm:pt-0">
           <a
             href={calLink}
             target="_blank"
@@ -43,15 +43,6 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ calLink }) => {
             className="px-7 xs:px-8 sm:px-10 py-3 sm:py-4 rounded-full bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-normal text-xs xs:text-sm sm:text-base tracking-[0px] shadow-lg hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
           >
             Get Early Access
-          </a>
-          <a
-            href={calLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 xs:px-7 sm:px-8 py-3 sm:py-4 rounded-full bg-white/80 hover:bg-white text-neutral-900 border border-neutral-300/80 font-['Inter'] font-medium text-xs xs:text-sm sm:text-base tracking-[0px] shadow-sm hover:shadow transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap inline-flex items-center gap-2"
-          >
-            <span>Book a Demo</span>
-            <span className="text-neutral-500">&rarr;</span>
           </a>
         </div>
       </motion.div>
