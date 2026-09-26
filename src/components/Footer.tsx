@@ -237,8 +237,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
               <span className="block text-[10px] font-semibold tracking-[0.16em] uppercase text-neutral-500 mb-1">
                 General Inquiries
               </span>
-              <a href="mailto:ronit@samvaya.in" className="text-xs sm:text-[13.5px] font-medium text-neutral-900 hover:text-[#FF3E00] transition-colors">
-                ronit@samvaya.in
+              <a href="mailto:rohit@samvaya.in" className="text-xs sm:text-[13.5px] font-medium text-neutral-900 hover:text-[#FF3E00] transition-colors">
+                rohit@samvaya.in
               </a>
             </div>
           </div>

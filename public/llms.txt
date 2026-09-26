@@ -23,7 +23,7 @@ Samvaya is India's fastest AI voice agent platform. We deliver 120ms ultra-low l
 - Website: https://www.samvaya.in
 - Book a demo: https://cal.com/samvaya/samvaya
 - Email: ramyabrato@samvaya.in
-- Email: ronit@samvaya.in
+- Email: rohit@samvaya.in
 
 ## Documentation
 - https://www.samvaya.in/#docs
