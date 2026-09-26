@@ -286,22 +286,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
           </div>
 
           {/* Outlined Wireframe Architectural Typography SVG matching Heron AI reference */}
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full flex items-center justify-center px-4 sm:px-8">
             <svg 
-              viewBox="0 0 1000 220" 
-              className="w-full h-auto max-h-[220px] sm:max-h-[300px] md:max-h-[360px] select-none"
+              viewBox="0 0 1250 200" 
+              className="w-full h-auto max-h-[160px] sm:max-h-[220px] md:max-h-[260px] select-none"
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Draft crosshairs in background */}
-              <line x1="0" y1="110" x2="1000" y2="110" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
-              <line x1="500" y1="0" x2="500" y2="220" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
+              <line x1="0" y1="100" x2="1250" y2="100" stroke="#111111" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.3" />
+              <line x1="625" y1="0" x2="625" y2="200" stroke="#111111" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.3" />
               
               {/* Construction Guides & Cad Marks */}
-              <circle cx="85" cy="110" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
-              <circle cx="915" cy="110" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
+              <circle cx="50" cy="100" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
+              <circle cx="1200" cy="100" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
 
-              {/* Wireframe Architectural Text 'SAMVAYA' - larger scale */}
+              {/* Wireframe Architectural Text 'SAMVAYA' - accurately fitted inside container */}
               <text 
                 x="50%" 
                 y="63%" 
@@ -309,9 +309,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                 dominantBaseline="middle"
                 fill="none" 
                 stroke="#111111" 
-                strokeWidth="1.4"
-                letterSpacing="0.12em"
-                className="font-['Inter'] font-normal text-[160px] sm:text-[185px] md:text-[200px] select-none"
+                strokeWidth="1.3"
+                letterSpacing="0.08em"
+                className="font-['Inter'] font-normal text-[150px] select-none"
                 style={{
                   strokeDasharray: "none",
                   paintOrder: "stroke fill",
