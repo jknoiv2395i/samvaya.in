@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Stats } from "./Stats"
+import { trackCalBookingClick } from "../utils/analytics"
 
 interface HeroProps {
   calLink: string
@@ -94,6 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ calLink }) => {
             href={calLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCalBookingClick("hero_cta")}
             style={{ backgroundImage: "url('/btn-bg.png')" }}
             className="w-auto min-w-[160px] xs:min-w-[175px] sm:min-w-[173px] h-[44px] xs:h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-none tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center"
           >

@@ -2,6 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { ArrowUpRight, ArrowRight } from "lucide-react"
 import { LegalDocType } from "./LegalModal"
+import { trackCalBookingClick } from "../utils/analytics"
 
 interface FooterProps {
   onOpenLegal?: (doc: LegalDocType) => void
@@ -74,7 +75,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                 </a>
               </li>
               <li>
-                <a href={calLink} target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-black transition-colors flex items-center gap-1 group">
+                <a 
+                  href={calLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onClick={() => trackCalBookingClick("footer_schedule_demo")}
+                  className="text-neutral-700 hover:text-black transition-colors flex items-center gap-1 group"
+                >
                   <span>Schedule demo</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </a>

@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics 4 (GA4) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VWW0RT14K"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-6VWW0RT14K');
+      // Enhanced configuration: send pageviews, anonymize IP, support SPA hash routing
+      gtag('config', 'G-6VWW0RT14K', {
+        send_page_view: true,
+        cookie_flags: 'SameSite=None;Secure',
+        anonymize_ip: true
+      });
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png?v=3" />

@@ -7,6 +7,7 @@ import { Features } from "./components/Features"
 import { Stats } from "./components/Stats"
 import { LegalModal, LegalDocType } from "./components/LegalModal"
 import { DocsLayout } from "./components/DocsLayout"
+import { trackPageView } from "./utils/analytics"
 
 const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
@@ -57,13 +58,16 @@ export const App: React.FC = () => {
     }
   }, [])
 
-  // Sync hash changes
+  // Sync hash changes & track GA4 pageviews
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === "#docs") {
+      const hash = window.location.hash
+      if (hash === "#docs") {
         setCurrentView("docs")
+        trackPageView("/#docs", "Samvaya Documentation")
       } else if (currentView === "docs") {
         setCurrentView("home")
+        trackPageView("/", "Samvaya | #1 AI Voice Agents in India for B2B Sales & Calling")
       }
     }
     window.addEventListener("hashchange", handleHashChange)

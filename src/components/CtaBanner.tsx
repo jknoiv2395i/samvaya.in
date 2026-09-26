@@ -1,5 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
+import { trackCalBookingClick } from "../utils/analytics"
 
 interface CtaBannerProps {
   calLink: string
@@ -39,6 +40,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ calLink }) => {
             href={calLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCalBookingClick("cta_banner")}
             style={{ backgroundImage: "url('/btn-bg.png')" }}
             className="px-7 xs:px-8 sm:px-10 py-3 sm:py-4 rounded-full bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-normal text-xs xs:text-sm sm:text-base tracking-[0px] shadow-lg hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
           >
