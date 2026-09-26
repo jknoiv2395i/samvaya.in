@@ -259,7 +259,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
         </div>
 
         {/* Technical Blueprint Massive Brand Showcase: SAMVAYA wireframe typography with crosshairs */}
-        <div className="relative w-full overflow-hidden border-b border-[#D5D2CB] bg-[#E8E6E0] py-8 sm:py-14 md:py-16 px-4 sm:px-10">
+        <div className="relative w-full overflow-hidden border-b border-[#D5D2CB] bg-[#E8E6E0] py-12 sm:py-20 md:py-24 px-2 sm:px-6">
           {/* Blueprint Corner Crosshairs */}
           <span className="absolute top-2 left-3 font-mono text-[14px] text-neutral-500 select-none">+</span>
           <span className="absolute top-2 right-3 font-mono text-[14px] text-neutral-500 select-none">+</span>
@@ -288,30 +288,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
           {/* Outlined Wireframe Architectural Typography SVG matching Heron AI reference */}
           <div className="w-full flex items-center justify-center">
             <svg 
-              viewBox="0 0 1000 170" 
-              className="w-full h-auto max-h-[160px] md:max-h-[220px] select-none"
+              viewBox="0 0 1000 220" 
+              className="w-full h-auto max-h-[220px] sm:max-h-[300px] md:max-h-[360px] select-none"
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Draft crosshairs in background */}
-              <line x1="0" y1="85" x2="1000" y2="85" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
-              <line x1="500" y1="0" x2="500" y2="170" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
+              <line x1="0" y1="110" x2="1000" y2="110" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
+              <line x1="500" y1="0" x2="500" y2="220" stroke="#111111" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.35" />
               
               {/* Construction Guides & Cad Marks */}
-              <circle cx="100" cy="85" r="3" stroke="#111111" strokeWidth="0.7" opacity="0.4" />
-              <circle cx="900" cy="85" r="3" stroke="#111111" strokeWidth="0.7" opacity="0.4" />
+              <circle cx="85" cy="110" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
+              <circle cx="915" cy="110" r="3.5" stroke="#111111" strokeWidth="0.8" opacity="0.4" />
 
-              {/* Wireframe Architectural Text 'SAMVAYA' */}
+              {/* Wireframe Architectural Text 'SAMVAYA' - larger scale */}
               <text 
                 x="50%" 
-                y="62%" 
+                y="63%" 
                 textAnchor="middle" 
                 dominantBaseline="middle"
                 fill="none" 
                 stroke="#111111" 
-                strokeWidth="1.2"
-                letterSpacing="0.16em"
-                className="font-['Inter'] font-normal text-[115px] sm:text-[132px] md:text-[146px] select-none"
+                strokeWidth="1.4"
+                letterSpacing="0.12em"
+                className="font-['Inter'] font-normal text-[160px] sm:text-[185px] md:text-[200px] select-none"
                 style={{
                   strokeDasharray: "none",
                   paintOrder: "stroke fill",
