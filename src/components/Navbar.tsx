@@ -10,10 +10,10 @@ const NAV_LINKS = [
 ]
 
 interface NavbarProps {
-  onOpenEarlyAccess?: () => void
+  calLink: string
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
+export const Navbar: React.FC<NavbarProps> = ({ calLink }) => {
   const [activeSection, setActiveSection] = useState("")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -99,17 +99,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
         {/* Right Controls: CTA & Mobile Toggle */}
         <div className="flex items-center gap-2">
           {/* Desktop CTA */}
-          <button
-            type="button"
-            onClick={() => {
-              setIsMobileMenuOpen(false)
-              if (onOpenEarlyAccess) onOpenEarlyAccess()
-            }}
+          <a
+            href={calLink}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ backgroundImage: "url('/btn-bg.png')" }}
             className="hidden sm:flex bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[13px] xs:text-[15px] leading-[24px] tracking-[0px] min-w-[125px] xs:min-w-[155px] h-[38px] xs:h-[44px] px-3.5 xs:px-5 py-1.5 rounded-full transition-all duration-200 shadow-sm hover:opacity-90 active:scale-[0.98] cursor-pointer items-center justify-center whitespace-nowrap"
           >
             Get Early Access
-          </button>
+          </a>
 
           {/* Mobile Rounded Square Toggle Button - White with Grey Stroke */}
           <button
@@ -146,17 +144,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEarlyAccess }) => {
           </nav>
 
           {/* Get Early Access CTA button */}
-          <button
-            type="button"
-            onClick={() => {
-              setIsMobileMenuOpen(false)
-              if (onOpenEarlyAccess) onOpenEarlyAccess()
-            }}
+          <a
+            href={calLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMobileMenuOpen(false)}
             style={{ backgroundImage: "url('/btn-bg.png')" }}
             className="w-full h-[50px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[15.5px] rounded-full flex items-center justify-center transition-all duration-200 hover:opacity-90 active:scale-95 shadow-xs cursor-pointer tracking-[0px]"
           >
             Get Early Access
-          </button>
+          </a>
         </div>
       )}
     </header>

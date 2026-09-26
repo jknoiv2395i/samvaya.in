@@ -1,24 +1,12 @@
-import React, { useState } from "react"
-import { Mail } from "lucide-react"
+import React from "react"
 import { motion } from "framer-motion"
 import { Stats } from "./Stats"
 
 interface HeroProps {
-  onOpenEarlyAccess?: (email?: string) => void
+  calLink: string
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email && onOpenEarlyAccess) {
-      onOpenEarlyAccess(email)
-    } else if (onOpenEarlyAccess) {
-      onOpenEarlyAccess()
-    }
-  }
-
+export const Hero: React.FC<HeroProps> = ({ calLink }) => {
   return (
     <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-0 flex flex-col justify-between pb-12 sm:pb-16 md:pb-20">
       {/* Background Foliage Graphic Layer */}
@@ -95,35 +83,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEarlyAccess }) => {
           </p>
         </motion.div>
 
-        {/* Early Access Email Form */}
-        <motion.form
+        {/* CTA Button */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          onSubmit={handleSubmit}
-          className="mt-3 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 max-w-2xl mx-auto"
+          className="mt-3 sm:mt-6 flex items-center justify-center"
         >
-          {/* Email Input Field - Desktop Only */}
-          <div className="hidden sm:flex items-center gap-2.5 w-[410px] h-[52px] bg-white border border-neutral-300/80 rounded-full px-5 py-2.5 shadow-xs focus-within:border-neutral-500 focus-within:ring-2 focus-within:ring-neutral-200 transition-all">
-            <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@example.com"
-              className="w-full bg-transparent font-['Inter'] text-sm text-neutral-800 placeholder-neutral-400 outline-none"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
+          <a
+            href={calLink}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ backgroundImage: "url('/btn-bg.png')" }}
-            className="w-auto min-w-[160px] xs:min-w-[175px] sm:min-w-[173px] h-[44px] xs:h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-none tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center mx-auto sm:mx-0"
+            className="w-auto min-w-[160px] xs:min-w-[175px] sm:min-w-[173px] h-[44px] xs:h-[46px] sm:h-[52px] bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-[300] text-[14px] xs:text-[15px] sm:text-[16.9px] leading-none tracking-[0px] px-6 sm:px-7 py-2 rounded-full shadow-xs hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap flex items-center justify-center"
           >
             Get Early Access
-          </button>
-        </motion.form>
+          </a>
+        </motion.div>
 
         {/* Chat Bar Image */}
         <motion.div 

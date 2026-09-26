@@ -2,10 +2,10 @@ import React from "react"
 import { motion } from "framer-motion"
 
 interface CtaBannerProps {
-  onOpenEarlyAccess?: () => void
+  calLink: string
 }
 
-export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
+export const CtaBanner: React.FC<CtaBannerProps> = ({ calLink }) => {
   return (
     <section id="resources" className="relative w-full py-8 sm:py-12 px-3 sm:px-6 lg:px-8 max-w-[1560px] mx-auto overflow-hidden">
       <motion.div 
@@ -35,16 +35,17 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenEarlyAccess }) => {
 
         {/* CTAs */}
         <div className="z-10 flex flex-col sm:flex-row items-center justify-center gap-3 mt-auto pt-4 sm:pt-0">
-          <button
-            type="button"
-            onClick={onOpenEarlyAccess}
+          <a
+            href={calLink}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ backgroundImage: "url('/btn-bg.png')" }}
             className="px-7 xs:px-8 sm:px-10 py-3 sm:py-4 rounded-full bg-cover bg-center bg-no-repeat text-white font-['Inter'] font-normal text-xs xs:text-sm sm:text-base tracking-[0px] shadow-lg hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
           >
             Get Early Access
-          </button>
+          </a>
           <a
-            href="https://cal.com/samvaya/samvaya"
+            href={calLink}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 xs:px-7 sm:px-8 py-3 sm:py-4 rounded-full bg-white/80 hover:bg-white text-neutral-900 border border-neutral-300/80 font-['Inter'] font-medium text-xs xs:text-sm sm:text-base tracking-[0px] shadow-sm hover:shadow transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap inline-flex items-center gap-2"

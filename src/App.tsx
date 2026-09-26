@@ -12,15 +12,13 @@ const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => 
 const Pricing = lazy(() => import("./components/Pricing").then(m => ({ default: m.Pricing })))
 const CtaBanner = lazy(() => import("./components/CtaBanner").then(m => ({ default: m.CtaBanner })))
 const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })))
-const EarlyAccessModal = lazy(() => import("./components/EarlyAccessModal").then(m => ({ default: m.EarlyAccessModal })))
+
+const CAL_LINK = "https://cal.com/samvaya/samvaya?overlayCalendar=true"
 
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<"home" | "docs">(() => {
     return window.location.hash === "#docs" ? "docs" : "home"
   })
-  const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false)
-  const [modalInitialEmail, setModalInitialEmail] = useState("")
-  const [modalAutoSendOtp, setModalAutoSendOtp] = useState(false)
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
 
   // Framer-motion scroll progress animation with smooth spring dampening
@@ -72,33 +70,6 @@ export const App: React.FC = () => {
     return () => window.removeEventListener("hashchange", handleHashChange)
   }, [currentView])
 
-  // Auto-open waitlist popup after 5 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsEarlyAccessOpen(true)
-      setModalInitialEmail("")
-      setModalAutoSendOtp(false)
-    }, 5000)
-    return () => clearTimeout(timer)
-  }, [])
-
-  const handleOpenEarlyAccess = (email?: string) => {
-    if (email) {
-      setModalInitialEmail(email)
-      setModalAutoSendOtp(true)
-    } else {
-      setModalInitialEmail("")
-      setModalAutoSendOtp(false)
-    }
-    setIsEarlyAccessOpen(true)
-  }
-
-  const handleCloseEarlyAccess = () => {
-    setIsEarlyAccessOpen(false)
-    setModalInitialEmail("")
-    setModalAutoSendOtp(false)
-  }
-
   if (currentView === "docs") {
     return (
       <DocsLayout 
@@ -119,9 +90,9 @@ export const App: React.FC = () => {
       />
 
       <div>
-        <Navbar onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
+        <Navbar calLink={CAL_LINK} />
         <main>
-          <Hero onOpenEarlyAccess={handleOpenEarlyAccess} />
+          <Hero calLink={CAL_LINK} />
           {/* Mobile-only Stats section placed completely outside & below Hero section */}
           <div className="sm:hidden w-full bg-white pt-4 pb-0">
             <Stats />
@@ -130,24 +101,14 @@ export const App: React.FC = () => {
           <Suspense fallback={null}>
             <NaturalSpeech />
             <Pricing />
-            <CtaBanner onOpenEarlyAccess={() => handleOpenEarlyAccess()} />
+            <CtaBanner calLink={CAL_LINK} />
             <Footer 
               onOpenLegal={(doc) => setActiveLegalDoc(doc)} 
-              onOpenEarlyAccess={() => handleOpenEarlyAccess()} 
+              calLink={CAL_LINK}
             />
           </Suspense>
         </main>
       </div>
-
-      {/* Early Access Popup Modal */}
-      <Suspense fallback={null}>
-        <EarlyAccessModal 
-          isOpen={isEarlyAccessOpen} 
-          onClose={handleCloseEarlyAccess} 
-          initialEmail={modalInitialEmail}
-          autoSendOtp={modalAutoSendOtp}
-        />
-      </Suspense>
 
       {/* Trust & Legal Modal (Privacy Policy, Terms of Service, Security) */}
       <LegalModal 

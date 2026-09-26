@@ -5,10 +5,10 @@ import { LegalDocType } from "./LegalModal"
 
 interface FooterProps {
   onOpenLegal?: (doc: LegalDocType) => void
-  onOpenEarlyAccess?: () => void
+  calLink: string
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenEarlyAccess }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
   const scrollToTop = () => {
     const lenisInstance = (window as unknown as { lenis?: { scrollTo: (target: number | string, options?: { duration?: number }) => void } }).lenis
     if (lenisInstance) {
@@ -195,17 +195,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenEarlyAccess }
                   <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </a>
               </li>
-              {onOpenEarlyAccess && (
-                <li className="pt-1">
-                  <button
-                    type="button"
-                    onClick={onOpenEarlyAccess}
+              <li className="pt-1">
+                  <a
+                    href={calLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-medium text-blue-600 hover:text-blue-700 transition-colors cursor-pointer text-xs"
                   >
                     Request Early Access &rarr;
-                  </button>
+                  </a>
                 </li>
-              )}
             </ul>
           </div>
 
