@@ -1,0 +1,29 @@
+# Samvaya AI — AI Voice Agent Platform
+
+## About
+Samvaya is India's fastest AI voice agent platform. We deliver 120ms ultra-low latency AI voice agents for B2B sales automation, inbound lead qualification, and automated appointment booking.
+
+## Key Facts
+- Response latency: <120ms (sub-second)
+- 10,000+ conversations processed
+- Deploy in under 2 minutes
+- 85% cost reduction vs human sales teams
+- BYOC telephony: Twilio, Exotel, Vobiz, Smartflo, InTalk, Pulse
+- Languages: English, Hindi, Hinglish
+- Natural speech with breathing pauses and fluid turn-taking
+
+## Use Cases
+- Outbound lead qualification calls
+- Inbound receptionist and routing
+- Automated appointment booking
+- Follow-up across WhatsApp and email
+- CRM sync and analytics
+
+## Contact
+- Website: https://www.samvaya.in
+- Book a demo: https://cal.com/samvaya/samvaya
+- Email: ramyabrato@samvaya.in
+- Email: ronit@samvaya.in
+
+## Documentation
+- https://www.samvaya.in/#docs
