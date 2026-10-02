@@ -180,17 +180,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                   Address
                 </span>
                 <p className="text-xs text-neutral-800 leading-relaxed font-normal">
-                  Indiranagar, Bangalore<br />
-                  Karnataka 560038, India
+                  Vivekananda Road, Silchar<br />
+                  Assam 788007
                 </p>
               </div>
               <a 
-                href="https://maps.google.com/?q=Indiranagar+Bangalore+India" 
+                href="https://www.google.com/maps/place/Vivekananda+Rd,+Ambicapatty,+Silchar,+Assam/@24.8210679,92.7872425,17z/data=!3m1!4b1!4m6!3m5!1s0x374e4a653f11757f:0x8c8ad73aa8eab852!8m2!3d24.8210679!4d92.7872425!16s%2Fg%2F1tgn_4rf?entry=ttu&g_ep=EgoyMDI2MDkyOS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-xs text-neutral-900 font-medium hover:underline mt-4 inline-block"
               >
-                Direction &rarr;
+                Directions &rarr;
               </a>
             </div>
             <div className="p-6">
@@ -397,12 +397,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                   Address
                 </span>
                 <p className="text-sm text-neutral-800 leading-relaxed font-normal">
-                  Indiranagar, Bangalore<br />
-                  Karnataka 560038, India
+                  Vivekananda Road, Silchar<br />
+                  Assam 788007
                 </p>
               </div>
               <a 
-                href="https://maps.google.com/?q=Indiranagar+Bangalore+India" 
+                href="https://www.google.com/maps/place/Vivekananda+Rd,+Ambicapatty,+Silchar,+Assam/@24.8210679,92.7872425,17z/data=!3m1!4b1!4m6!3m5!1s0x374e4a653f11757f:0x8c8ad73aa8eab852!8m2!3d24.8210679!4d92.7872425!16s%2Fg%2F1tgn_4rf?entry=ttu&g_ep=EgoyMDI2MDkyOS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-xs text-neutral-900 font-medium hover:underline mt-4 inline-block"
