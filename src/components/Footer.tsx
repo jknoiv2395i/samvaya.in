@@ -11,6 +11,10 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === "#docs") {
+      window.location.hash = "#docs"
+      return
+    }
     if (href.startsWith("#")) {
       e.preventDefault()
       const id = href.replace("#", "")
@@ -136,16 +140,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                 <li>
                   <a href="#docs" onClick={(e) => handleNavClick(e, "#docs")} className="text-neutral-800 hover:text-black transition-colors">
                     Documentation
-                  </a>
-                </li>
-                <li>
-                  <a href="#features" onClick={(e) => handleNavClick(e, "#features")} className="text-neutral-800 hover:text-black transition-colors">
-                    AI Benchmarks
-                  </a>
-                </li>
-                <li>
-                  <a href="#docs" onClick={(e) => handleNavClick(e, "#docs")} className="text-neutral-800 hover:text-black transition-colors">
-                    API &amp; Webhooks
                   </a>
                 </li>
               </ul>
@@ -323,21 +317,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, calLink }) => {
                 <li>
                   <a href="#docs" onClick={(e) => handleNavClick(e, "#docs")} className="text-neutral-700 hover:text-black transition-colors">
                     Documentation
-                  </a>
-                </li>
-                <li>
-                  <a href="#features" onClick={(e) => handleNavClick(e, "#features")} className="text-neutral-700 hover:text-black transition-colors">
-                    AI Benchmarks
-                  </a>
-                </li>
-                <li>
-                  <a href="https://cal.com/samvaya/samvaya" target="_blank" rel="noopener noreferrer" className="text-neutral-700 hover:text-black transition-colors">
-                    Client Case Studies
-                  </a>
-                </li>
-                <li>
-                  <a href="#docs" onClick={(e) => handleNavClick(e, "#docs")} className="text-neutral-700 hover:text-black transition-colors">
-                    API &amp; Webhooks
                   </a>
                 </li>
               </ul>

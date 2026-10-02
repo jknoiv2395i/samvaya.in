@@ -6,7 +6,7 @@ import { Hero } from "./components/Hero"
 import { Features } from "./components/Features"
 import { Stats } from "./components/Stats"
 import { LegalModal, LegalDocType } from "./components/LegalModal"
-import { DocsLayout } from "./components/DocsLayout"
+import { SamvayaDocsPortal } from "./components/SamvayaDocsPortal"
 import { trackPageView } from "./utils/analytics"
 
 const NaturalSpeech = lazy(() => import("./components/NaturalSpeech").then(m => ({ default: m.NaturalSpeech })))
@@ -17,8 +17,10 @@ const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.
 const CAL_LINK = "https://cal.com/samvaya/samvaya?overlayCalendar=true"
 
 export const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<"home" | "docs">(() => {
-    return window.location.hash === "#docs" ? "docs" : "home"
+  const [currentView, setCurrentView] = useState<"home" | "docs" | "newdocs">(() => {
+    if (window.location.hash === "#docs") return "docs"
+    if (window.location.hash === "#newdocs") return "newdocs"
+    return "home"
   })
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null)
 
@@ -65,7 +67,9 @@ export const App: React.FC = () => {
       if (hash === "#docs") {
         setCurrentView("docs")
         trackPageView("/#docs", "Samvaya Documentation")
-      } else if (currentView === "docs") {
+      } else if (hash === "#newdocs") {
+        setCurrentView("newdocs")
+      } else if (currentView === "docs" || currentView === "newdocs") {
         setCurrentView("home")
         trackPageView("/", "Samvaya | #1 AI Voice Agents in India for B2B Sales & Calling")
       }
@@ -74,13 +78,13 @@ export const App: React.FC = () => {
     return () => window.removeEventListener("hashchange", handleHashChange)
   }, [currentView])
 
-  if (currentView === "docs") {
+  if (currentView === "docs" || currentView === "newdocs") {
     return (
-      <DocsLayout 
+      <SamvayaDocsPortal
         onBackToHome={() => {
           window.location.hash = ""
           setCurrentView("home")
-        }} 
+        }}
       />
     )
   }

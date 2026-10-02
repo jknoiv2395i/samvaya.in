@@ -60,7 +60,7 @@ export const Features: React.FC = () => {
           <img
             src="/flower-badge.png"
             alt="Artistic flower badge"
-            className="absolute -top-5 -left-3 sm:-top-8 sm:-left-12 md:-top-9 md:-left-14 lg:-left-16 w-14 sm:w-22 md:w-26 lg:w-28 h-auto pointer-events-none select-none z-30 drop-shadow-md"
+            className="absolute -top-6 -left-1 sm:-top-9 sm:-left-3 md:-top-10 md:-left-4 lg:-left-5 w-14 sm:w-22 md:w-26 lg:w-28 h-auto pointer-events-none select-none z-30 drop-shadow-md"
           />
 
           <div 

@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "Docs", href: "#docs" },
   { label: "Pricing", href: "#pricing" },
   { label: "Book a Demo", href: "https://cal.com/samvaya/samvaya", isExternal: true },
-  { label: "Contact Us", href: "mailto:ramyabrato@samvaya.in" },
+  { label: "Contact Us", href: "https://cal.com/samvaya/samvaya", isExternal: true },
 ]
 
 interface NavbarProps {
@@ -20,6 +20,11 @@ export const Navbar: React.FC<NavbarProps> = ({ calLink }) => {
 
   // Smooth scroll handler
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === "#docs") {
+      setIsMobileMenuOpen(false)
+      window.location.hash = "#docs"
+      return
+    }
     if (href.startsWith("#")) {
       e.preventDefault()
       setIsMobileMenuOpen(false)
