@@ -1,0 +1,36 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .work-poster-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .metrics-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-title { font-size: 2.3rem; }
+  .booking-title { font-size: 2.3rem; }
+  .section-title { font-size: 2.1rem; }
+  .work-poster-grid { grid-template-columns: repeat(2, 1fr); }
+  .scrollable-preview-row { grid-template-columns: 1fr; }
+  .value-stack-grid { grid-template-columns: 1fr; }
+  .header-nav { display: none; }
+  .hero-trust-bar { flex-direction: column; gap: 8px; border-radius: 16px; }
+  .trust-divider { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-vsl-section { padding: 40px 0 60px; }
+  .hero-title { font-size: 1.85rem; }
+  .hero-subtitle { font-size: 16px; }
+  .booking-title { font-size: 1.85rem; }
+  .work-poster-grid { grid-template-columns: 1fr; }
+  .metrics-ribbon { grid-template-columns: 1fr; }
+  .scroll-viewport { height: 380px; }
+  .vsl-play-button { width: 68px; height: 68px; }
+  .vsl-play-caption { font-size: 15px; }
+  .btn-lime-lg { width: 100%; padding: 16px 24px; font-size: 15px; }
+}

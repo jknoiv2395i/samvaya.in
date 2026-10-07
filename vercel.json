@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/ad-campaign",
+      "destination": "/ad-campaign/index.html"
+    },
+    {
+      "source": "/ad-campaign/",
+      "destination": "/ad-campaign/index.html"
+    }
+  ]
+}

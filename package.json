@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "sync-campaign": "powershell -ExecutionPolicy Bypass -File ./scripts/sync-campaign.ps1",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
