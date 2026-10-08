@@ -1,5 +1,5 @@
 $SourcePath = "C:\Users\BRABILO\Desktop\campaign no 1 funnel webiste"
-$DestPath = "$PSScriptRoot\public\ad-campaign"
+$DestPath = "$PSScriptRoot\..\public\ad-campaign"
 
 if (Test-Path $SourcePath) {
     Write-Host "Syncing campaign files from $SourcePath to $DestPath..."
