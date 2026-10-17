@@ -5,13 +5,14 @@ export const NaturalSpeech: React.FC = () => {
   return (
     <section id="voice" className="relative w-full pt-10 sm:pt-16 pb-16 sm:pb-24 px-2 sm:px-8 mx-auto overflow-hidden sm:overflow-visible">
       {/* Foliage Landscape Background Layer — shifted lower */}
-      <div className="absolute inset-x-0 top-40 sm:top-52 bottom-0 pointer-events-none z-0 w-full overflow-hidden flex items-end sm:items-center justify-center translate-y-4 sm:translate-y-8">
+      <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none z-0 w-full h-full overflow-hidden flex items-center justify-center">
         <img
-          src="/hero-bg.png"
-          alt="Hero background foliage"
+          src="/natural-speech-section-bg.png"
+          alt="Section background"
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-contain sm:object-cover object-bottom sm:object-center select-none"
+          className="w-full h-full object-cover object-center select-none"
+          style={{ minHeight: "100%", minWidth: "100%" }}
         />
         {/* Soft top gradient to blend cleanly with section above */}
         <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
