@@ -9,36 +9,16 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ calLink }) => {
   return (
-    <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-0 flex flex-col justify-between pb-12 sm:pb-16 md:pb-20">
-      {/* Background Foliage Graphic Layer */}
-      <div className="absolute inset-0 pointer-events-none z-0 w-full h-full flex items-end sm:items-center justify-center overflow-hidden">
-        <img
-          src="/hero-bg.png"
-          alt="Hero background foliage"
-          className="w-full h-full object-contain sm:object-cover object-bottom sm:object-center"
-        />
-        {/* Soft top blend gradient on mobile into the sky */}
-        <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-white via-white/80 to-transparent" />
-      </div>
-
+    <section className="relative w-full overflow-hidden pt-20 sm:pt-28 md:pt-32 lg:pt-36 min-h-0 flex flex-col justify-between pb-12 sm:pb-16 md:pb-20 bg-white">
       {/* Main Content Layer */}
       <div className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto px-4 text-center">
-        {/* Main Headline with Flying Golden Birds */}
+        {/* Main Headline */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.85, ease: "easeOut" }}
           className="relative inline-block max-w-full mx-auto px-2 text-center"
         >
-          {/* Left Bird Illustration */}
-          <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-            src="/bird-left.png"
-            alt="Golden bird left"
-            className="absolute -left-3 xs:-left-5 sm:-left-14 md:-left-24 lg:-left-34 xl:-left-42 -top-6 xs:-top-8 sm:-top-2 md:top-0 w-11 xs:w-15 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
-          />
 
           <h1 className="font-['Inter'] font-[300] text-[26px] min-[350px]:text-[29px] min-[380px]:text-[33px] xs:text-[40px] sm:text-7xl md:text-8xl lg:text-[96px] xl:text-[108px] leading-[1.1] sm:leading-[1] md:leading-[88px] lg:leading-[90px] xl:leading-[96px] tracking-[-0.5px] min-[360px]:tracking-[-0.8px] sm:tracking-[-2px] md:tracking-[-3px] lg:tracking-[-4px] xl:tracking-[-6px] text-neutral-900 text-center">
             <span className="block whitespace-nowrap">
@@ -57,16 +37,6 @@ export const Hero: React.FC<HeroProps> = ({ calLink }) => {
               Not Conversions.
             </span>
           </h1>
-
-          {/* Right Bird Illustration - Desktop Only */}
-          <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-            src="/bird-right.png"
-            alt="Golden bird right"
-            className="hidden sm:block absolute sm:-right-14 md:-right-22 lg:-right-32 xl:-right-40 sm:top-8 md:top-10 lg:top-14 sm:w-28 md:w-36 h-auto pointer-events-none select-none z-20"
-          />
         </motion.div>
 
         {/* Subtitle Copy */}
