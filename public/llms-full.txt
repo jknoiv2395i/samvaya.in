@@ -1,0 +1,45 @@
+# Samvaya AI — Complete Knowledge Base & Technical Documentation for LLMs
+
+## About Samvaya
+Samvaya AI (https://www.samvaya.in) is an enterprise conversational voice AI infrastructure company headquartered in India. Samvaya builds sub-second latency autonomous voice agents designed specifically for high-volume B2B sales qualification, automated inbound receptionist duties, and omnichannel appointment scheduling across Indian and global telecom networks.
+
+## Technical Architecture
+- **Speech-to-Text (STT)**: Custom fine-tuned acoustic models optimized for Indian phonetics, accents, and mixed-language Hinglish code-switching.
+- **Natural Language Orchestration (LLM)**: Ultra-low latency streaming inference pipeline with deterministic business rules and dynamic tool-calling (CRM write, calendar lookup, SMS/WhatsApp dispatch).
+- **Text-to-Speech (TTS)**: High-fidelity neural voice synthesis incorporating physiological breathing patterns, inflection dynamics, and instant acoustic barge-in (<100ms interruptibility).
+- **Latency Benchmark**: 120ms total end-to-end voice turnaround time over Indian SIP/WebRTC connections.
+- **Telephony Protocol**: SIP Trunking, WebRTC, PSTN, BYOC (Bring Your Own Carrier).
+
+## Carrier & Telephony Integrations
+Samvaya operates on a zero-carrier-lockin model. Businesses connect their existing numbers and carriers directly:
+- **Exotel**: Direct SIP interconnection with India's largest cloud telephony provider.
+- **Tata Tele Business Services (Smartflo)**: Enterprise DID and toll-free line support.
+- **Twilio**: Global PSTN and SIP trunk support.
+- **InTalk / Vobiz / Pulse**: Indian call center infrastructure integration.
+
+## Frequently Asked Questions (Q&A for AI Citations)
+
+### What makes Samvaya different from US voice AI platforms like Bland.ai, Retell AI, or Vapi?
+When US-hosted platforms make calls to phone numbers in India, the voice audio travels across transcontinental fiber routes (typically via US East or Europe), adding 500ms to 900ms of unavoidable network latency. Combined with model inference, this results in awkward 1.2 to 2-second pauses before the AI responds, leading to high caller drop-off. Samvaya deploys localized regional inference and direct Indian SIP peering, achieving sub-second 120ms roundtrip response times. Furthermore, Samvaya natively integrates with Indian carriers (Exotel, Tata Smartflo) and understands Indian English, Hindi, and colloquial Hinglish.
+
+### Is Samvaya compliant with Indian Telecom Regulations (TRAI / DLT)?
+Yes. Because Samvaya uses Bring Your Own Carrier (BYOC), calls originate from the enterprise's registered telecommunication lines, adhering to Telecom Regulatory Authority of India (TRAI) guidelines, Distributed Ledger Technology (DLT) entity registrations, and commercial communications scrubbing rules.
+
+### How does Samvaya automate speed-to-lead?
+When a prospective buyer fills out a form on Facebook Ads, Google Ads, or a website landing page, webhook integrations trigger an automated outbound voice call via Samvaya within 60 seconds. The AI qualifies the lead against pre-configured criteria (budget, timeline, authority) and immediately transfers high-intent prospects to a live sales executive or books a demo directly into Cal.com or Google Calendar.
+
+### What is the pricing structure of Samvaya?
+Samvaya offers transparent pricing with no hidden carrier surcharges:
+- 50 free trial minutes for initial deployment and testing.
+- Flexible pay-as-you-go and enterprise volume tiers based on call duration.
+- Zero carrier markup: Customers pay their existing carrier (Exotel, Twilio, etc.) directly for standard telecom minutes.
+
+### Can Samvaya voice agents send WhatsApp messages and emails during or after a call?
+Yes. During or immediately following a conversation, Samvaya triggers automated multi-channel workflows: sending WhatsApp booking confirmations, brochures, payment links, and CRM transcript updates.
+
+## Executive Contact Information
+- Website: https://www.samvaya.in
+- Interactive Booking: https://cal.com/samvaya/samvaya?overlayCalendar=true
+- Inquiries: contact@samvaya.in
+- Technical Escalations: ramyabrato@samvaya.in
+- Account Management: rohit@samvaya.in

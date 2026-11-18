@@ -128,31 +128,67 @@
           "areaServed": "IN"
         },
         {
+          "@type": "WebPage",
+          "@id": "https://www.samvaya.in/#webpage",
+          "url": "https://www.samvaya.in/",
+          "name": "Samvaya | #1 AI Voice Agents in India for B2B Sales & Calling",
+          "isPartOf": { "@id": "https://www.samvaya.in/#website" },
+          "about": { "@id": "https://www.samvaya.in/#software" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["#faq", ".seo-speakable-summary", "h1", "h2"]
+          }
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://www.samvaya.in/#faq",
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What is Samvaya?",
+              "name": "What is Samvaya and how does it automate B2B sales calling in India?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Samvaya is an AI voice agent platform that calls and qualifies inbound leads in seconds with sub-second (120ms) response times, books appointments, and syncs across CRM and messaging channels."
+                "text": "Samvaya is India's fastest AI voice agent platform that calls and qualifies inbound leads in under 60 seconds with sub-second (120ms) response times, books appointments into Google Calendar/Cal.com, and syncs notes across CRM and WhatsApp channels."
               }
             },
             {
               "@type": "Question",
-              "name": "How fast are Samvaya AI voice agents?",
+              "name": "How fast are Samvaya AI voice agents compared to US voice bots like Bland AI or Vapi?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Samvaya delivers industry-leading 120ms ultra-low latency response times with natural breathing pauses, fluid turn-taking, and native Hinglish fluency."
+                "text": "Samvaya delivers 120ms ultra-low latency response times with edge nodes peered directly with Indian telecom networks. US platforms experience 800ms to 1500ms latency when calling Indian numbers, creating unnatural silences. Samvaya features human-grade breathing pauses, fluid turn-taking, and native Hinglish fluency."
               }
             },
             {
               "@type": "Question",
-              "name": "Which telephony providers can I use with Samvaya?",
+              "name": "Which telephony carriers can I connect to Samvaya in India?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Samvaya supports Bring Your Own Carrier (BYOC) telephony including Twilio, Exotel, Vobiz, Smartflo, InTalk, and Pulse."
+                "text": "Samvaya offers true Bring Your Own Carrier (BYOC) telephony support. You can connect your existing business numbers via Exotel, Tata Tele Business Services (Smartflo), Twilio, InTalk, Vobiz, or Pulse with 0% carrier markup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Samvaya voice agents speak fluent Hindi and Hinglish?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Samvaya's speech models are purpose-built for the Indian market, supporting fluent Indian English, conversational Hindi, and natural Hinglish code-switching with authentic regional intonation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is automated AI voice calling with Samvaya compliant with TRAI and DLT regulations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Because Samvaya operates over your enterprise's registered BYOC telephony lines, all outbound calls utilize your registered DLT header, adhere to TRAI calling window guidelines, and honor DND preference registries."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does Samvaya AI voice calling cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Samvaya provides 50 free minutes on signup to test agents in a live sandbox. Production usage is billed on a transparent per-minute basis with zero markup on your carrier costs, reducing BDR/SDR operational expenses by up to 85%."
               }
             }
           ]
@@ -217,20 +253,14 @@
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "Features",
-              "item": "https://www.samvaya.in/features"
+              "name": "Ad Campaign Funnel",
+              "item": "https://www.samvaya.in/ad-campaign"
             },
             {
               "@type": "ListItem",
               "position": 3,
-              "name": "Voice",
-              "item": "https://www.samvaya.in/voice"
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "name": "Pricing",
-              "item": "https://www.samvaya.in/pricing"
+              "name": "Documentation",
+              "item": "https://www.samvaya.in/#docs"
             }
           ]
         }
@@ -238,7 +268,6 @@
     }
     </script>
 
-    <link rel="preload" href="/hero-bg.png" as="image" />
     <link rel="preload" href="/btn-bg.png" as="image" />
     <link rel="dns-prefetch" href="https://cal.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
